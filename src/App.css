@@ -89,9 +89,13 @@
 	padding-left: 0px !important;
 }
 
+.flex-center {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
 	.p-r-l-10-vw {
 		padding-right: 10vw !important;
 		padding-left: 10vw !important;

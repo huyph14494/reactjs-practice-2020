@@ -14,9 +14,9 @@ function Item(props) {
 				<td className="p-r-l-none">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-8 col-xs-12 text-center vertical-align-middle">
+							<div className="col-md-7 col-xs-12 flex-center">
 								<div
-									style={{ maxHeight: 270, maxWidth: 480, height: '45vw', width: '80vw' }}
+									style={{ maxHeight: 180, maxWidth: 320, height: '45vw', width: '80vw' }}
 									className="text-center frame"
 								>
 									<picture>
@@ -29,7 +29,7 @@ function Item(props) {
 									</picture>
 								</div>
 							</div>
-							<div className="col-lg-4 col-xs-12 text-left p-r-l-10-vw">
+							<div className="col-md-5 col-xs-12 text-left p-r-l-10-vw">
 								<p className="font-100-per mt-4">
 									<b>{props.data.name}</b>
 								</p>
