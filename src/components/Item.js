@@ -1,4 +1,5 @@
 import React from 'react';
+const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Item(props) {
 	let dateNow = new Date();
@@ -18,7 +19,7 @@ function Item(props) {
 						<picture>
 							<img
 								style={{ height: '100%' }}
-								src={'/images/' + props.data.image}
+								src={PUBLIC_URL + '/images/' + props.data.image}
 								alt={props.data.image}
 								className="img-thumbnail img-fluid"
 							/>
