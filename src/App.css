@@ -84,6 +84,20 @@
 	margin-left: 0px !important;
 }
 
+.p-r-l-none {
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+	.p-r-l-10-vw {
+		padding-right: 10vw !important;
+		padding-left: 10vw !important;
+	}
+}
+
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
