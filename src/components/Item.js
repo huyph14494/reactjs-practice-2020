@@ -26,11 +26,11 @@ function Item(props) {
 					</div>
 				</td>
 				<td className="text-left vertical-align-middle">
-					<p className="font-4vw">
+					<p className="font-100-per">
 						<b>{props.data.name}</b>
 					</p>
-					<p className="font-2vw">{props.data.descriptions}</p>
-					<p className="font-2vw">{props.data.dateNow}</p>
+					<p className="font-80-per">{props.data.descriptions}</p>
+					<p className="font-80-per">{props.data.dateNow}</p>
 				</td>
 			</tr>
 		</tbody>
