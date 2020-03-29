@@ -29,9 +29,7 @@ function shuffle(arra1) {
 function List() {
 	return (
 		<div className="col-xs-12 mt-5">
-			<div className="col-xs-12">
-				<table className="table table-hover bg-light">{showList()}</table>
-			</div>
+			<table className="table table-hover bg-light">{showList()}</table>
 		</div>
 	);
 }

@@ -76,7 +76,7 @@
 }
 
 .font-80-per {
-  font-size: 80%;
+  font-size: 80% !important;
 }
 
 
