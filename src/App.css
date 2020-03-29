@@ -79,6 +79,10 @@
   font-size: 80% !important;
 }
 
+.m-r-l-none {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
 
 @keyframes App-logo-spin {
 	from {

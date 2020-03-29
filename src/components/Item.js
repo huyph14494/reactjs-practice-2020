@@ -12,7 +12,7 @@ function Item(props) {
 					{props.id + 1}
 				</th> */}
 				<td>
-					<div className="row">
+					<div className="row m-r-l-none">
 						<div className="col-md-8 col-xs-12 text-center vertical-align-middle">
 							<div
 								style={{ maxHeight: 270, maxWidth: 480, height: '45vw', width: '80vw' }}
