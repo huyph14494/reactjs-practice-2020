@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/reactjs_redux_example/static/css/main.6d27624b.chunk.css",
+    "main.js": "/reactjs_redux_example/static/js/main.5680d403.chunk.js",
+    "main.js.map": "/reactjs_redux_example/static/js/main.5680d403.chunk.js.map",
+    "runtime-main.js": "/reactjs_redux_example/static/js/runtime-main.4ffe7a55.js",
+    "runtime-main.js.map": "/reactjs_redux_example/static/js/runtime-main.4ffe7a55.js.map",
+    "static/css/2.de424728.chunk.css": "/reactjs_redux_example/static/css/2.de424728.chunk.css",
+    "static/js/2.2e6b965a.chunk.js": "/reactjs_redux_example/static/js/2.2e6b965a.chunk.js",
+    "static/js/2.2e6b965a.chunk.js.map": "/reactjs_redux_example/static/js/2.2e6b965a.chunk.js.map",
+    "index.html": "/reactjs_redux_example/index.html",
+    "precache-manifest.3dfe3a2852826939ea1f491a7a0f81d3.js": "/reactjs_redux_example/precache-manifest.3dfe3a2852826939ea1f491a7a0f81d3.js",
+    "service-worker.js": "/reactjs_redux_example/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/reactjs_redux_example/static/css/2.de424728.chunk.css.map",
+    "static/css/main.6d27624b.chunk.css.map": "/reactjs_redux_example/static/css/main.6d27624b.chunk.css.map",
+    "static/js/2.2e6b965a.chunk.js.LICENSE.txt": "/reactjs_redux_example/static/js/2.2e6b965a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ffe7a55.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.2e6b965a.chunk.js",
+    "static/css/main.6d27624b.chunk.css",
+    "static/js/main.5680d403.chunk.js"
+  ]
+}
