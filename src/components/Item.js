@@ -31,7 +31,7 @@ function Item(props) {
 								</div>
 							</div>
 							<div className="col-md-5 col-xs-12 text-left p-r-l-10-vw">
-								<p className="font-100-per mt-4">
+								<p className="font-130-per mt-4">
 									<b>{props.data.name}</b>
 								</p>
 								<p className="font-80-per">{props.data.descriptions}</p>
