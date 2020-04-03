@@ -119,6 +119,10 @@
 	max-width: 800px;
 }
 
+.max-width-420 {
+	max-width: 420px;
+}
+
 @media only screen and (max-width: 767px) {
 	.p-r-l-10-vw {
 		padding-right: 10vw !important;

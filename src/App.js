@@ -2,14 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import List from './components/List';
 import Header from './components/Header';
+import Signin from './components/Signin';
 
 function App() {
 	console.log("Render List");
 
 	return (
-		<div className="App bg-light">
+		<div className="App">
 			<Header></Header>
-			<List></List>
+			<Signin></Signin>
+			{/* <List></List> */}
 		</div>
 	);
 }
