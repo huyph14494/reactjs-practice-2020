@@ -4,14 +4,15 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 function Item(props) {
 	let dateNow = new Date();
 	props.data.dateNow = dateNow.toLocaleString();
+	console.log("Render Item");
 
 	return (
 		<tbody>
-			<tr>
+			<tr className="box-shadow-28">
 				{/* <th scope="row" className="text-center vertical-align-middle">
 					{props.id + 1}
 				</th> */}
-				<td className="p-r-l-none">
+				<td className="p-r-l-none p-t-b-1-5rem">
 					<div className="container">
 						<div className="row">
 							<div className="col-md-7 col-xs-12 flex-center">

@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import List from './components/List';
+import Header from './components/Header';
 
 function App() {
+	console.log("Render List");
+
 	return (
-		<div className="App">
-			<header className="App-header">
-				<List></List>
-			</header>
+		<div className="App bg-light">
+			<Header></Header>
+			<List></List>
 		</div>
 	);
 }

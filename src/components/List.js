@@ -1,9 +1,9 @@
 import React from 'react';
-import News from 'src/data_json/news.json';
 import Item from './Item';
+import { connect } from 'react-redux';
 
-function showList() {
-	let data = shuffle(News);
+function showList(news) {
+	let data = shuffle(news);
 	return data.map((value, key) => <Item data={value} key={key} id={key} />);
 }
 
@@ -26,12 +26,22 @@ function shuffle(arra1) {
 	return arra1;
 }
 
-function List() {
+function List(props) {
+	console.log('Render List');
+
 	return (
-		<div className="col-xs-12 mt-5">
-			<table className="table table-hover bg-light">{showList()}</table>
-		</div>
+		<section className="container">
+			<div className="col-xs-12">
+				<table className="table table-hover bg-light table-borderless border-collapse-separate">{showList(props.news)}</table>
+			</div>
+		</section>
 	);
 }
 
-export default List;
+const mapStateToProps = (state, ownProps) => {
+	return {
+		news: state.news
+	};
+};
+
+export default connect(mapStateToProps)(List);
