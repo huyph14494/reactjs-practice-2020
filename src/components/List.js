@@ -30,7 +30,7 @@ function List(props) {
 	console.log('Render List');
 
 	return (
-		<section className="container">
+		<section className="container max-width-800">
 			<div className="col-xs-12">
 				<table className="table table-hover bg-light table-borderless border-collapse-separate">{showList(props.news)}</table>
 			</div>
