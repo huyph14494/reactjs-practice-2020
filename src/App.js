@@ -2,20 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from './components/Header';
 import MenuSidebar from './components/MenuSidebar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import routes from './routers/routers';
-import { v1 as uuidv1 } from 'uuid';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-function App() {
+function App(props) {
 	return (
-		<Router>
 			<div className="App">
 				<Header />
 				<MenuSidebar />
-				<Switch>{routes.map((route, i) => <Route exact className="fade" key={i} {...route} />)}</Switch>
+				<Link to="/">Home</Link>
+				<Link to="/sign-in">Sign-in</Link>
+				<Switch location={props.location}>{routes.map((route, i) => <Route exact key={i} {...route} />)}</Switch>	
 			</div>
-		</Router>
 	);
 }
 
@@ -26,4 +24,4 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

@@ -46,37 +46,37 @@
 }
 
 .frame:before {
-  border-radius: 2px;
-  bottom: -0.3vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25) inset;
-  content: "";
-  left: -0.3vmin;
-  position: absolute;
-  right: -0.3vmin;
-  top: -0.3vmin;
+	border-radius: 2px;
+	bottom: -0.3vmin;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25) inset;
+	content: "";
+	left: -0.3vmin;
+	position: absolute;
+	right: -0.3vmin;
+	top: -0.3vmin;
 }
 
 .frame:after {
-  border-radius: 2px;
-  bottom: -0.7vmin;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25);
-  content: "";
-  left: -0.7vmin;
-  position: absolute;
-  right: -0.7vmin;
-  top: -0.7vmin;
+	border-radius: 2px;
+	bottom: -0.7vmin;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25);
+	content: "";
+	left: -0.7vmin;
+	position: absolute;
+	right: -0.7vmin;
+	top: -0.7vmin;
 }
 
 .vertical-align-middle {
-  vertical-align: middle !important;
+	vertical-align: middle !important;
 }
 
 .font-130-per {
-  font-size: 130%;
+	font-size: 130%;
 }
 
 .font-80-per {
-  font-size: 80% !important;
+	font-size: 80% !important;
 }
 
 .m-r-l-none {
@@ -91,8 +91,8 @@
 
 .flex-center {
 	display: flex;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .box-shadow-28 {
@@ -108,7 +108,7 @@
 
 .border-collapse-separate {
 	border-collapse: separate;
-    border-spacing: 0px 1.75rem;
+	border-spacing: 0px 1.75rem;
 }
 
 .m-b-1rem {
@@ -139,144 +139,143 @@
 	}
 }
 
-
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .overlay {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 998;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
 }
 .overlay.active {
-    display: block;
-    opacity: 1;
+	display: block;
+	opacity: 1;
 }
 
 #sidebar {
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100vh;
-    z-index: 999;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
-    overflow-y: auto;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	width: 250px;
+	position: fixed;
+	top: 0;
+	left: -250px;
+	height: 100vh;
+	z-index: 999;
+	background: #7386d5;
+	color: #fff;
+	transition: all 0.3s;
+	overflow-y: auto;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 #sidebar.active {
-    left: 0;
+	left: 0;
 }
 
 #dismiss {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    background: #7386D5;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: #7386d5;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 #dismiss:hover {
-    background: #fff;
-    color: #7386D5;
+	background: #fff;
+	color: #7386d5;
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+	padding: 20px;
+	background: #6d7fcc;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+	padding: 20px 0;
+	border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
-    color: #fff;
-    padding: 10px;
+	color: #fff;
+	padding: 10px;
 }
 
 #sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
+	padding: 10px;
+	font-size: 1.1em;
+	display: block;
 }
 
 #sidebar ul li a:not(.active):hover {
-    color: #7386D5 !important;
-    background: #fff;
+	color: #7386d5 !important;
+	background: #fff;
 }
 
 #sidebar ul li a.active:hover {
-    color: #fff !important;
+	color: #fff !important;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+	color: #fff;
+	background: #6d7fcc;
 }
 
 a[data-toggle="collapse"] {
-    position: relative;
+	position: relative;
 }
 
 .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
 }
 
 ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+	font-size: 0.9em !important;
+	padding-left: 30px !important;
+	background: #6d7fcc;
 }
 
 ul.CTAs {
-    padding: 20px;
+	padding: 20px;
 }
 
 ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
+	text-align: center;
+	font-size: 0.9em !important;
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 5px;
 }
 
 a.download {
-    background: #fff;
-    color: #7386D5;
+	background: #fff;
+	color: #7386d5;
 }
 
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
+	background: #6d7fcc !important;
+	color: #fff !important;
 }
 
 nav#sidebar ul.components a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
 }
 
 /* ---------------------------------------------------
@@ -284,16 +283,16 @@ nav#sidebar ul.components a {
 ----------------------------------------------------- */
 
 #sidebar::-webkit-scrollbar {
-    width: 6px;
+	width: 6px;
 }
 
 #sidebar::-webkit-scrollbar-track {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 #sidebar::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: rgba(255,255,255,0.35);
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.35);
 }
 
 /* #sidebar::-webkit-scrollbar-thumb:hover {
@@ -304,23 +303,3 @@ nav#sidebar ul.components a {
   background: linear-gradient(left, #22ADD4, #1E98BA);
 } */
 
-/* ---------------------------------------------------
-    FADE CSSTransition
------------------------------------------------------ */
-.fade-enter {
-    opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in;
-}
-
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-}

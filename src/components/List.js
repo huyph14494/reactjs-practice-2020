@@ -31,7 +31,7 @@ function List(props) {
 	return (
 		<section className="container max-width-800">
 			<div className="col-xs-12">
-				<table className="table table-hover bg-light table-borderless border-collapse-separate">{showList(props.news)}</table>
+				<table className="table table-hover table-borderless border-collapse-separate">{showList(props.news)}</table>
 			</div>
 		</section>
 	);

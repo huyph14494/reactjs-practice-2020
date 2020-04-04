@@ -3,11 +3,11 @@ import List from 'src/components/List';
 
 const routes = [
 	{
-		path: '/reactjs_redux_example',
+		path: '/',
 		component: List
 	},
 	{
-		path: '/reactjs_redux_example/sign-in',
+		path: '/sign-in',
 		component: Signin
 	}
 ];
