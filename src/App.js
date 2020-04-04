@@ -1,19 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import List from './components/List';
 import Header from './components/Header';
-import Signin from './components/Signin';
 import MenuSidebar from './components/MenuSidebar';
+import { Switch } from 'react-router-dom';
+import routes from './routers/router';
+import RouteWithSubRoutes from './components/RouteWithSubRoutes';
+import uuid from 'uuid';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 function App() {
-	console.log('Render List');
-
 	return (
 		<div className="App">
 			<Header />
 			<MenuSidebar />
-			{/* <Signin></Signin> */}
-			{/* <List></List> */}
+
+			<TransitionGroup>
+				<CSSTransition key={uuid()} classNames="fade" timeout={300}>
+					<Switch>{routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}</Switch>
+				</CSSTransition>
+			</TransitionGroup>
 		</div>
 	);
 }

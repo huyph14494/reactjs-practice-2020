@@ -2,8 +2,6 @@ import React from 'react';
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Signin(props) {
-	console.log('Render Signin');
-
 	return (
 		<div className="container max-width-420 mt-3">
 			<form className="form-signin">

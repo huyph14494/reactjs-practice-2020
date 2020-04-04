@@ -27,8 +27,6 @@ function shuffle(arra1) {
 }
 
 function List(props) {
-	console.log('Render List');
-
 	return (
 		<section className="container max-width-800">
 			<div className="col-xs-12">

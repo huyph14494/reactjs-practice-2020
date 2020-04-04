@@ -4,7 +4,6 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 function Item(props) {
 	let dateNow = new Date();
 	props.data.dateNow = dateNow.toLocaleString();
-	console.log("Render Item");
 
 	return (
 		<tbody>

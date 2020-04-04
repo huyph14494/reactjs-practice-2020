@@ -1,10 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function MenuSidebar(props) {
-	console.log('Render MenuSidebar');
-
 	return (
 		<div>
 			{/* Sidebar  */}
@@ -20,7 +19,7 @@ function MenuSidebar(props) {
 						<h5>Dummy Heading</h5>
 					</div>
 					<li className="active">
-						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+						{/* <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
 							Home
 						</a>
 						<ul className="collapse list-unstyled" id="homeSubmenu">
@@ -33,24 +32,12 @@ function MenuSidebar(props) {
 							<li>
 								<a href="/">Home 3</a>
 							</li>
-						</ul>
+						</ul> */}
+
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<a href="/">About</a>
-						<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-							Pages
-						</a>
-						<ul className="collapse list-unstyled" id="pageSubmenu">
-							<li>
-								<a href="/">Page 1</a>
-							</li>
-							<li>
-								<a href="/">Page 2</a>
-							</li>
-							<li>
-								<a href="/">Page 3</a>
-							</li>
-						</ul>
+						<Link to="/sign-in">Sign-in</Link>
 					</li>
 				</ul>
 				<ul className="list-unstyled CTAs">
