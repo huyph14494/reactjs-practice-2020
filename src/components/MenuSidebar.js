@@ -1,7 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import routes from 'src/routers/routers';
+
+function showMenu(location) {
+	return routes.map((value, key) => (
+		<li key={key} className={(location.pathname === value.path ? "active" : "")}>
+			<Link to={value.path}>{value.name}</Link>
+		</li>
+	));
+}
 
 function MenuSidebar(props) {
 	return (
@@ -18,8 +27,8 @@ function MenuSidebar(props) {
 					<div className="mb-4 pl-3">
 						<h5>Dummy Heading</h5>
 					</div>
-					<li className="active">
-						{/* <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+					{/* <li className="active">
+						<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
 							Home
 						</a>
 						<ul className="collapse list-unstyled" id="homeSubmenu">
@@ -32,13 +41,12 @@ function MenuSidebar(props) {
 							<li>
 								<a href="/">Home 3</a>
 							</li>
-						</ul> */}
+						</ul>
 
 						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/sign-in">Sign-in</Link>
-					</li>
+					</li> */}
+
+					{ showMenu(props.location) }
 				</ul>
 				<ul className="list-unstyled CTAs">
 					<li>
@@ -57,4 +65,4 @@ function MenuSidebar(props) {
 	);
 }
 
-export default MenuSidebar;
+export default withRouter(MenuSidebar);

@@ -4,11 +4,13 @@ import List from 'src/components/List';
 const routes = [
 	{
 		path: '/',
-		component: List
+		component: List,
+		name: 'Home'
 	},
 	{
 		path: '/sign-in',
-		component: Signin
+		component: Signin,
+		name: 'Sign-in'
 	}
 ];
 

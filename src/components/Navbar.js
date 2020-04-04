@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import routes from 'src/routers/routers';
+
+function showMenu(location) {
+	return routes.map((value, key) => (
+		<li className={"nav-item ml-3" + (location.pathname === value.path ? " active" : "")} key={key}>
+			<Link className="nav-link" to={value.path}>
+				{value.name}
+			</Link>
+		</li>
+	));
+}
 
 function Navbar(props) {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-			<span className="navbar-brand toggleSidebar cursor-pointer">Navbar</span>
+			<span className="navbar-brand toggleSidebar cursor-pointer">Menu</span>
 
 			<button
 				className="navbar-toggler toggleSidebar"
@@ -19,20 +30,16 @@ function Navbar(props) {
 			</button>
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
-					<li className="nav-item active ml-3">
+					{/* <li className="nav-item active ml-3">
 						<Link className="nav-link" to="/">
 							Home
 						</Link>
-					</li>
-					<li className="nav-item ml-3">
-						<Link className="nav-link" to="/sign-in">
-							Sign-in
-						</Link>
-					</li>
+					</li> */}
+					{showMenu(props.location)}
 				</ul>
 			</div>
 		</nav>
 	);
 }
 
-export default Navbar;
+export default withRouter(Navbar);

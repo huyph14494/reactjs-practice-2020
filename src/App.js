@@ -2,18 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from './components/Header';
 import MenuSidebar from './components/MenuSidebar';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import routes from './routers/routers';
 import Navbar from './components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import config from './config/default';
 
 function App(props) {
+	console.log('App');
+
 	return (
-			<div className="App">
+		<div className="App">
+			<Router basename={"/" + config.prefix_web }>
 				<Navbar />
 				<Header />
 				<MenuSidebar />
-				<Switch location={props.location}>{routes.map((route, i) => <Route exact key={i} {...route} />)}</Switch>	
-			</div>
+
+				<Switch location={props.location}>
+					{routes.map((route, i) => <Route exact key={i} {...route} />)}
+				</Switch>
+			</Router>
+		</div>
 	);
 }
 
@@ -24,4 +33,4 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps)(App));
+export default connect(mapStateToProps)(App);
