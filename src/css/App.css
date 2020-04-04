@@ -119,12 +119,28 @@
 	max-width: 800px;
 }
 
-.max-width-420 {
-	max-width: 420px;
+.max-width-450 {
+	max-width: 450px;
 }
 
-.cursor-pointer{
-    cursor: pointer;
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.border-radius-10 {
+	border-radius: 10px;
+}
+
+.background-login {
+	background-image: url("/reactjs_redux_example/images/background-login.jpg");
+}
+
+.background-white {
+	background: #fff;
+}
+
+.padding-30 {
+	padding: 30px;
 }
 
 @media only screen and (max-width: 767px) {
