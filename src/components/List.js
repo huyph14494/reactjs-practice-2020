@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from './Item';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 function showList(news) {
 	let data = shuffle(news);
@@ -42,4 +43,4 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps)(List);
+export default withRouter(connect(mapStateToProps)(List));

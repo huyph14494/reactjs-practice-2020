@@ -278,10 +278,6 @@ nav#sidebar ul.components a {
     text-decoration: none;
     font-weight: 500;
 }
-/* ---------------------------------------------------
-    END SIDEBAR STYLE
------------------------------------------------------ */
-
 
 /* ---------------------------------------------------
      SIDEBAR SCROLL STYLE
@@ -304,10 +300,27 @@ nav#sidebar ul.components a {
  background: rgba(255,255,255,0.8);
 } */
 
-#sidebar::-webkit-scrollbar-thumb:active {
+/* #sidebar::-webkit-scrollbar-thumb:active {
   background: linear-gradient(left, #22ADD4, #1E98BA);
-}
+} */
 
 /* ---------------------------------------------------
-    END SIDEBAR SCROLL STYLE
+    FADE CSSTransition
 ----------------------------------------------------- */
+.fade-enter {
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}

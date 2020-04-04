@@ -34,10 +34,10 @@ function MenuSidebar(props) {
 							</li>
 						</ul> */}
 
-						<Link to="/">Home</Link>
+						<Link to="/reactjs_redux_example">Home</Link>
 					</li>
 					<li>
-						<Link to="/sign-in">Sign-in</Link>
+						<Link to="/reactjs_redux_example/sign-in">Sign-in</Link>
 					</li>
 				</ul>
 				<ul className="list-unstyled CTAs">
