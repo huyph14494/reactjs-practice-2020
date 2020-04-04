@@ -123,6 +123,10 @@
 	max-width: 420px;
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 767px) {
 	.p-r-l-10-vw {
 		padding-right: 10vw !important;
@@ -302,4 +306,3 @@ nav#sidebar ul.components a {
 /* #sidebar::-webkit-scrollbar-thumb:active {
   background: linear-gradient(left, #22ADD4, #1E98BA);
 } */
-

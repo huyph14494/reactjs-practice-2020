@@ -42,22 +42,17 @@ function MenuSidebar(props) {
 				</ul>
 				<ul className="list-unstyled CTAs">
 					<li>
-						<a href="/" className="download">
+						<Link to="/" className="download">
 							Download source
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="article">
+						<Link to="/" className="article">
 							Back to article
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</nav>
-
-			<button type="button" id="sidebarCollapse" className="btn btn-info">
-				<i className="fas fa-align-left" />
-				<span>Toggle Sidebar</span>
-			</button>
 		</div>
 	);
 }

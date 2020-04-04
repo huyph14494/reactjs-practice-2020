@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from './components/Header';
 import MenuSidebar from './components/MenuSidebar';
-import { Route, Switch, Link, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import routes from './routers/routers';
+import Navbar from './components/Navbar';
 
 function App(props) {
 	return (
 			<div className="App">
+				<Navbar />
 				<Header />
 				<MenuSidebar />
-				<Link to="/">Home</Link>
-				<Link to="/sign-in">Sign-in</Link>
 				<Switch location={props.location}>{routes.map((route, i) => <Route exact key={i} {...route} />)}</Switch>	
 			</div>
 	);
