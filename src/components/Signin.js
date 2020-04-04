@@ -3,7 +3,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Signin(props) {
 	return (
-		<div className="background-login">
+		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
 			<div className="container max-width-450 padding-30">
 				<form className="form-signin border-radius-10 background-white padding-30">
 					<div className="text-center mb-4">

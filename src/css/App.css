@@ -131,10 +131,6 @@
 	border-radius: 10px;
 }
 
-.background-login {
-	background-image: url("/reactjs_redux_example/images/background-login.jpg");
-}
-
 .background-white {
 	background: #fff;
 }
