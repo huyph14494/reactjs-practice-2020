@@ -1,4 +1,4 @@
-import News from 'src/data_json/news.json';
+import News from 'src/data_example/news.json';
 
 const initialState = News;
 
