@@ -10,7 +10,6 @@ import config from './config/default';
 
 function App(props) {
 	console.log('App');
-	console.log("ABC_TEST", process.env.ABC_TEST);
 
 	return (
 		<div className="App">
