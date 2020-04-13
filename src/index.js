@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './App';
+import App from './containers/App/index';
 import { Provider } from 'react-redux';
-import store1 from './stores/store1';
+import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
+import './css/index.css';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Provider store={store1}>
+		<Provider store={store}>
 			<App />
 		</Provider>
 	</React.StrictMode>,

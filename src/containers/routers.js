@@ -1,5 +1,5 @@
-import Signin from 'src/components/Signin';
-import List from 'src/components/List';
+import Signin from 'src/containers/App/Signin';
+import List from 'src/containers/App/List';
 
 const routes = [
 	{

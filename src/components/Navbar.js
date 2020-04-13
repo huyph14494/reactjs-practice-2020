@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import routes from 'src/routers/routers';
+import routes from 'src/containers/routers';
 
 function showMenu(location) {
 	return routes.map((value, key) => (

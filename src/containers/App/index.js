@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Header from './components/Header';
-import MenuSidebar from './components/MenuSidebar';
+import Header from '../../components/Header';
+import MenuSidebar from '../../components/MenuSidebar';
 import { Route, Switch } from 'react-router-dom';
-import routes from './routers/routers';
-import Navbar from './components/Navbar';
+import routes from '../routers';
+import Navbar from '../../components/Navbar';
 import { BrowserRouter as Router } from 'react-router-dom';
-import config from './config/default';
+import config from '../../config/default';
 
 function App(props) {
 	console.log('App');
