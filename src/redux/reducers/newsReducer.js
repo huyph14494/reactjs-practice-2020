@@ -8,4 +8,3 @@ export default (state = initialState, { type }) => {
         return state
     }
 }
-
