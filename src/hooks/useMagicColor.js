@@ -15,21 +15,19 @@ function randomColor(oldColor) {
 export default function useMagicColor(initColor = 'white') {
 	const [ color, setColor ] = useState(initColor);
 	const coloRef = useRef(initColor);
-
 	// console.log("useMagicColor");
 
 	useEffect(() => {
 		// console.log("useMagicColor useEffect");
-
 		let intervalColor = setInterval(() => {
 			// console.log("useMagicColor useEffect setInterval");
 			let newColor = randomColor(coloRef.current);
 			setColor(newColor);
 			coloRef.current = newColor
-		}, 1000);
+		}, 1150);
 
 		return () => {
-			// console.log("useMagicColor useEffect clear");
+			// console.log("useMagicColor useEffect clearInterval");
 			clearInterval(intervalColor);
 		};
 	// eslint-disable-next-line react-hooks/exhaustive-deps
