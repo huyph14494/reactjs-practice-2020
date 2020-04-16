@@ -1,20 +1,21 @@
-import { createStore, combineReducers } from "redux";
-import statusReducer from "src/redux/reducers/statusReducer";
-import numReducer from "src/redux/reducers/numReducer";
-import noteReducer from "src/redux/reducers/noteReducer";
-import newsReducer from "src/redux/reducers/newsReducer";
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './rootReducer.js'
+import rootSaga from './rootSaga';
 
-let allReducers = combineReducers({
-    status: statusReducer, 
-    num: numReducer, 
-    note: noteReducer,
-    news: newsReducer
-});
+const sagaMiddleware = createSagaMiddleware();
+let store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
-let store = createStore(allReducers);
+sagaMiddleware.run(rootSaga)
 
-store.subscribe(() => {
-    console.log(store.getState());
-});
+// test saga
+// setTimeout(function(){
+//   const action = type => store.dispatch({type})
+//   action('INCREMENT_ASYNC');
+// }, 5000);
+
+// store.subscribe(() => {
+// 	console.log(store.getState());
+// });
 
 export default store;

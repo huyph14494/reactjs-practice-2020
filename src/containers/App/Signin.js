@@ -30,8 +30,6 @@ function Signin(props) {
 	const username = React.useRef();
 	const password = React.useRef();
 
-	console.log('Signin');
-
 	return (
 		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
 			<div className="container max-width-450 padding-30">

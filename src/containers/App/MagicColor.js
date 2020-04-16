@@ -3,7 +3,7 @@ import useMagicColor from 'src/hooks/useMagicColor';
 
 export default function MagicColor() {
   let { color } = useMagicColor('white');
-  
+
 	return (
 		<section className={"container"}>
       <div className='mt-5 mb-5'

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import MenuSidebar from '../../components/MenuSidebar';
 import { Route, Switch } from 'react-router-dom';
@@ -26,11 +25,4 @@ function App(props) {
 	);
 }
 
-const mapStateToProps = (state, ownProps) => {
-	// console.log("state", state);
-	return {
-		num: state.num
-	};
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
