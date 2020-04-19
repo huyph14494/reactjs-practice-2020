@@ -1,8 +1,10 @@
 import { all } from 'redux-saga/effects';
-import helloSaga from './sagas/helloSaga.js'
+import hello from './sagas/hello.js'
+import authBackend from './sagas/authBackend.js';
 
 export default function* rootSaga() {
   yield all([
-    ...helloSaga
+    ...hello,
+    ...authBackend
   ])
 }

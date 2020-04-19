@@ -1,14 +1,16 @@
 import { combineReducers } from 'redux';
-import statusReducer from 'src/redux/reducers/statusReducer';
-import numReducer from 'src/redux/reducers/numReducer';
-import noteReducer from 'src/redux/reducers/noteReducer';
-import newsReducer from 'src/redux/reducers/newsReducer';
+import status from 'src/redux/reducers/status';
+import num from 'src/redux/reducers/num';
+import note from 'src/redux/reducers/note';
+import news from 'src/redux/reducers/news';
+import authBackend from './reducers/authBackend';
 
 let allReducers = combineReducers({
-	status: statusReducer,
-	num: numReducer,
-	note: noteReducer,
-	news: newsReducer
+	status,
+	num,
+	note,
+  news,
+  authBackend
 });
 
 export default allReducers;

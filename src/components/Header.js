@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Header(props) {
-	console.log("Header");
+  console.log("Header");
 
 	return (
 		<div className="jumbotron m-b-1rem">

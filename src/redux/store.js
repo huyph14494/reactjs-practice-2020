@@ -14,8 +14,8 @@ sagaMiddleware.run(rootSaga)
 //   action('INCREMENT_ASYNC');
 // }, 2000);
 
-// store.subscribe(() => {
-// 	console.log(store.getState());
-// });
+store.subscribe(() => {
+	console.log("subscribe", store.getState());
+});
 
 export default store;

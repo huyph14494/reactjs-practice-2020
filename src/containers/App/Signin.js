@@ -1,42 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Axios from 'axios';
-import config from 'src/config/default';
+import { loginBackend } from 'src/redux/actions/authBackend';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const handleSubmit = (event, username, password) => {
+const handleSubmit = (event, username, password, props) => {
 	event.preventDefault();
 
 	if (String(username.current.value).trim() !== '' && String(password.current.value).trim() !== '') {
-		const instance = Axios.create({
-			baseURL: config.base_url_server,
-			timeout: 10000,
-		});
-
-		instance({ url: '/api/auth/signup', method: 'get' })
-			.then(function(response) {
-				// handle success
-				console.log(response);
-			})
-			.catch(function(error) {
-				// handle error
-				console.log(error);
-			});
-	}
+    props.loginBackend();
+  }
 };
 
 function Signin(props) {
 	const username = React.useRef();
   const password = React.useRef();
-  
-  // console.log("Signin");
 
+  console.log(props.authBackend.user)
+ 
 	return (
 		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
 			<div className="container max-width-450 padding-30">
 				<form
-					onSubmit={(event) => handleSubmit(event, username, password)}
+					onSubmit={(event) => handleSubmit(event, username, password, props)}
 					className="form-signin border-radius-10 background-white padding-30"
 				>
 					<div className="text-center mb-4">
@@ -80,8 +66,12 @@ function Signin(props) {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		num: state.num
+		authBackend: state.authBackend
 	};
 };
 
-export default connect(mapStateToProps)(Signin);
+const mapDispatchToProps = {
+	loginBackend: loginBackend
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);
