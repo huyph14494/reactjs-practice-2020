@@ -28,7 +28,9 @@ const handleSubmit = (event, username, password) => {
 
 function Signin(props) {
 	const username = React.useRef();
-	const password = React.useRef();
+  const password = React.useRef();
+  
+  // console.log("Signin");
 
 	return (
 		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
@@ -78,7 +80,7 @@ function Signin(props) {
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		news: state.news
+		num: state.num
 	};
 };
 

@@ -12,7 +12,7 @@ sagaMiddleware.run(rootSaga)
 // setTimeout(function(){
 //   const action = type => store.dispatch({type})
 //   action('INCREMENT_ASYNC');
-// }, 5000);
+// }, 2000);
 
 // store.subscribe(() => {
 // 	console.log(store.getState());
