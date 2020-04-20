@@ -10,7 +10,6 @@ function* loginBackend(action) {
     console.log('loginBackend', errorCatch);
     yield put({ type: actions.LOGIN_BACKEND_FAIL });
   }
-
 }
 
 function* actionWatcher() {
