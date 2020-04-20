@@ -10,7 +10,9 @@ export default (state = initialState, { type, user }) => {
 		case actions.LOGIN_BACKEND:
 			return { ...state, loading: true };
 		case actions.LOGIN_BACKEND_SUCCESS:
-			return { ...state, user, loading: false };
+      return { ...state, user, loading: false };
+    case actions.LOGIN_BACKEND_FAIL:
+			return { ...state, loading: false };
 		default:
 			return state;
 	}

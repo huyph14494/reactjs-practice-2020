@@ -1,28 +1,34 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { loginBackend } from 'src/redux/actions/authBackend';
+import { useHistory } from 'react-router-dom';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const handleSubmit = (event, username, password, props) => {
+const handleSubmit = ({ event, username, password, props, history }) => {
 	event.preventDefault();
 
 	if (String(username.current.value).trim() !== '' && String(password.current.value).trim() !== '') {
-    props.loginBackend();
-  }
+    props.loginBackend(history);
+	}
 };
 
 function Signin(props) {
-	const username = React.useRef();
-  const password = React.useRef();
+  let history = useHistory();
+	const username = useRef('');
+  const password = useRef('');
+  
+  console.log('Signin Signin'); // React.StrictMode call 2 time in dev, in production one time
 
-  console.log(props.authBackend.user)
- 
+  if(props.authBackend.user) {
+    history.replace('/'); // call many time show warning
+  }
+
 	return (
 		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
 			<div className="container max-width-450 padding-30">
 				<form
-					onSubmit={(event) => handleSubmit(event, username, password, props)}
+					onSubmit={(event) => handleSubmit({ event, username, password, props, history })}
 					className="form-signin border-radius-10 background-white padding-30"
 				>
 					<div className="text-center mb-4">
