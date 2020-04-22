@@ -8,18 +8,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import config from '../../config/default';
 
 function App(props) {
-	console.log('App');
-
 	return (
 		<div className="App">
-			<Router basename={"/" + config.prefix_web }>
+			<Router basename={'/' + config.prefix_web}>
 				<Navbar />
 				<Header />
 				<MenuSidebar />
 
-				<Switch location={props.location}>
-					{routes.map((route, i) => <Route exact key={i} {...route} />)}
-				</Switch>
+				<Switch location={props.location}>{routes.map((route, i) => <Route exact key={i} {...route} />)}</Switch>
 			</Router>
 		</div>
 	);
