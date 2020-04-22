@@ -1,15 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { loginBackend } from 'src/redux/actions/authBackend';
 import { useHistory } from 'react-router-dom';
+import BackendApi from 'src/api/backend';
+import * as actions from 'src/redux/actions/authBackend'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
+let isStatusLogin = false;
 
-const handleSubmit = ({ event, username, password, props, history }) => {
+const handleSubmit = async ({ event, username, password, props, history }) => {
 	event.preventDefault();
 
 	if (String(username.current.value).trim() !== '' && String(password.current.value).trim() !== '') {
-    props.loginBackend(history);
+    try {
+      let user = await BackendApi.get();
+      props.loginBackend(user);
+      history.replace('/');
+      isStatusLogin = true;
+    } catch (errorCatch) {
+      console.log("handleSubmit", errorCatch);
+    }
 	}
 };
 
@@ -20,10 +29,19 @@ function Signin(props) {
   
   console.log('Signin Signin'); // React.StrictMode call 2 time in dev, in production one time
 
-  if(props.authBackend.user) {
-    history.replace('/'); // call many time show warning
-  }
+  useEffect(() => {
+    if(props.authBackend.user && isStatusLogin) {
+      history.replace('/'); // call many time show warning
+    } else if(!props.authBackend.user) {
+      isStatusLogin = false;
+    }
 
+    return () => {
+      console.log("Signin clear");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
 	return (
 		<div style={{ backgroundImage: 'url(' + PUBLIC_URL + '/images/background-login.jpg)' }}>
 			<div className="container max-width-450 padding-30">
@@ -76,8 +94,12 @@ const mapStateToProps = (state, ownProps) => {
 	};
 };
 
-const mapDispatchToProps = {
-	loginBackend: loginBackend
-};
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    loginBackend: (user) => {
+      dispatch({ type: actions.LOGIN_BACKEND_SUCCESS, user })
+    }
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signin);
