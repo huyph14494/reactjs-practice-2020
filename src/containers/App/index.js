@@ -4,13 +4,17 @@ import MenuSidebar from '../../components/MenuSidebar';
 import { Route, Switch } from 'react-router-dom';
 import routes from '../routers';
 import Navbar from '../../components/Navbar';
+import Alert from '../../components/Alert';
 import { BrowserRouter as Router } from 'react-router-dom';
 import config from '../../config/default';
 
 function App(props) {
+  console.log("App");
+  
 	return (
 		<div className="App">
 			<Router basename={'/' + config.prefix_web}>
+        <Alert />
 				<Navbar />
 				<Header />
 				<MenuSidebar />

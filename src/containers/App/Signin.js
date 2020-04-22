@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import BackendApi from 'src/api/backend';
-import * as actions from 'src/redux/actions/authBackend';
+import { LOGIN_BACKEND_SUCCESS } from 'src/redux/actions/authBackend';
+import { SHOW_ALERT } from 'src/redux/actions/alert';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 let isStatusLogin = false;
@@ -14,11 +15,13 @@ const handleSubmit = async ({ event, username, password, props, history, setLoad
 	if (String(username.current.value).trim() !== '' && String(password.current.value).trim() !== '') {
     setLoading(true);
 		try {
-			await delay(5000);
+			await delay(2000);
 			let user = await BackendApi.get();
-			props.loginBackend(user);
+      props.loginBackend(user);
+      props.showAlert("Login Success...!");
+
 			history.replace('/');
-			isStatusLogin = true;
+      isStatusLogin = true;
 		} catch (errorCatch) {
       console.log('handleSubmit', errorCatch);
       setLoading(false);
@@ -116,8 +119,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		loginBackend: (user) => {
-			dispatch({ type: actions.LOGIN_BACKEND_SUCCESS, user });
-		}
+			dispatch({ type: LOGIN_BACKEND_SUCCESS, user });
+    },
+    showAlert: (context) => {
+			dispatch({ type: SHOW_ALERT, context });
+    },
 	};
 };
 
