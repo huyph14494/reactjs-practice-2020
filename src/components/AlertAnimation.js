@@ -12,7 +12,7 @@ function AlertAnimation(props) {
 					// console.log('Alert useEffect');
 					props.closeAlert();
 				}
-			}, 1250);
+			}, 2200);
 			return () => {
 				// console.log('Clear Alert useEffect');
 				clearTimeout(timeout);
