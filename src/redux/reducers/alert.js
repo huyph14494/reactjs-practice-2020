@@ -5,13 +5,13 @@ const initialState = {
 	toggle: false
 };
 
-export default (state = initialState, { type, context }) => {
+export default (state = initialState, { type, context, variant }) => {
 	switch (type) {
 		case actions.SHOW_ALERT:
-			return { ...state, context, toggle: true };
+			return { ...state, context, variant, toggle: true };
 
 		case actions.CLOSE_ALERT:
-			return { ...state, context: '', toggle: false };
+			return { ...state, context: '', variant: 'danger', toggle: false };
 
 		default:
 			return state;

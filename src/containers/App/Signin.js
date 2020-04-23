@@ -18,7 +18,7 @@ const handleSubmit = async ({ event, username, password, props, history, setLoad
 			await delay(2000);
 			let user = await BackendApi.get();
       props.loginBackend(user);
-      props.showAlert("Login Success...!");
+      props.showAlert("Login Success...!", "danger");
 
 			history.replace('/');
       isStatusLogin = true;
@@ -121,8 +121,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		loginBackend: (user) => {
 			dispatch({ type: LOGIN_BACKEND_SUCCESS, user });
     },
-    showAlert: (context) => {
-			dispatch({ type: SHOW_ALERT, context });
+    showAlert: (context, variant) => {
+			dispatch({ type: SHOW_ALERT, context, variant });
     },
 	};
 };

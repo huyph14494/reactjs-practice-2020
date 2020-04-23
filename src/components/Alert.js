@@ -26,7 +26,7 @@ function AlertComponent(props) {
 	return (
 		<div>
 			{toggleAlert ? (
-				<Alert variant="success" bsPrefix="alert alert-custom alert-success" onClose={() => props.closeAlert()} dismissible>
+				<Alert variant={props.alert.variant ||  "success"} bsPrefix={"alert alert-custom alert-" + (props.alert.variant ||  "success") + " box-shadow-1"} onClose={() => props.closeAlert()} dismissible>
 					{props.alert.context}
 				</Alert>
 			) : (
