@@ -343,8 +343,8 @@ nav#sidebar ul.components a {
   right: 3px;
   top: 20px;
   margin-top:0;
-  width: 100%;
-  max-width: 60vw;
+  max-width: 98vw;
+  min-width: 60vw;
   z-index: 1000;
   border: 1px solid #155724;
 }
