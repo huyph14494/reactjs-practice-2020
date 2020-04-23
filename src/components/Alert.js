@@ -2,21 +2,9 @@ import React, { useEffect } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { connect } from 'react-redux';
 import { CLOSE_ALERT } from 'src/redux/actions/alert';
-import { CSSTransition } from 'react-transition-group';
 
 function showAlert(props) {
-	return props.alert.classTransition ? (
-		<CSSTransition in={props.alert.toggle} timeout={300} classNames={props.alert.classTransition} unmountOnExit>
-			<Alert
-				variant={props.alert.variant || 'success'}
-				bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1'}
-				onClose={() => props.closeAlert()}
-        dismissible
-			>
-				{props.alert.context}
-			</Alert>
-		</CSSTransition>
-	) : (
+	return (
 		<Alert
 			variant={props.alert.variant || 'success'}
 			bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1'}
@@ -36,7 +24,7 @@ function AlertComponent(props) {
 					// console.log('Alert useEffect');
 					props.closeAlert();
 				}
-			}, 5000);
+			}, 2000);
 			return () => {
 				// console.log('Clear Alert useEffect');
 				clearTimeout(timeout);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Button, Alert } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
-import { SHOW_ALERT } from 'src/redux/actions/alert';
+import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
 import { randomVariant, createSentence } from 'src/helpers/common/random-alert';
 
@@ -12,7 +12,7 @@ function AlertAnimation(props) {
 	return (
 		<Container style={{ marginTop: '2rem' }}>
 			<Container style={{ marginTop: '2rem' }}>
-				<Button onClick={() => props.showAlert(createSentence(), randomVariant(), 'toggen')} size="lg" variant="success">
+				<Button onClick={() => props.showAlertAnimation(createSentence(), randomVariant(), 'toggen')} size="lg" variant="success">
 					Add Message
 				</Button>
 			</Container>
@@ -46,8 +46,8 @@ function AlertAnimation(props) {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		showAlert: (context, variant, classTransition) => {
-			dispatch({ type: SHOW_ALERT, context, variant, classTransition });
+		showAlertAnimation: (context, variant, classTransition) => {
+			dispatch({ type: SHOW_ALERT_ANIMATION, context, variant, classTransition });
 		}
 	};
 };

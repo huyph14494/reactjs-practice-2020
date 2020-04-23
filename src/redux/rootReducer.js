@@ -5,6 +5,7 @@ import note from 'src/redux/reducers/note';
 import news from 'src/redux/reducers/news';
 import authBackend from './reducers/authBackend';
 import alert from './reducers/alert';
+import alertAnimation from './reducers/alertAnimation';
 
 let allReducers = combineReducers({
 	status,
@@ -12,7 +13,8 @@ let allReducers = combineReducers({
 	note,
   news,
   authBackend,
-  alert
+  alert,
+  alertAnimation
 });
 
 export default allReducers;
