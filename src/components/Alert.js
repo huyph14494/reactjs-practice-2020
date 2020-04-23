@@ -2,14 +2,37 @@ import React, { useEffect } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { connect } from 'react-redux';
 import { CLOSE_ALERT } from 'src/redux/actions/alert';
+import { CSSTransition } from 'react-transition-group';
+
+function showAlert(props) {
+	return props.alert.classTransition ? (
+		<CSSTransition in={props.alert.toggle} timeout={300} classNames={props.alert.classTransition} unmountOnExit>
+			<Alert
+				variant={props.alert.variant || 'success'}
+				bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1'}
+				onClose={() => props.closeAlert()}
+        dismissible
+			>
+				{props.alert.context}
+			</Alert>
+		</CSSTransition>
+	) : (
+		<Alert
+			variant={props.alert.variant || 'success'}
+			bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1'}
+			onClose={() => props.closeAlert()}
+			dismissible
+		>
+			{props.alert.context}
+		</Alert>
+	);
+}
 
 function AlertComponent(props) {
-	let toggleAlert = props.alert.toggle;
-
 	useEffect(
 		() => {
 			let timeout = setTimeout(function() {
-				if (toggleAlert) {
+				if (props.alert.toggle) {
 					// console.log('Alert useEffect');
 					props.closeAlert();
 				}
@@ -23,17 +46,7 @@ function AlertComponent(props) {
 		[ props.alert.toggle ]
 	);
 
-	return (
-		<div>
-			{toggleAlert ? (
-				<Alert variant={props.alert.variant ||  "success"} bsPrefix={"alert alert-custom alert-" + (props.alert.variant ||  "success") + " box-shadow-1"} onClose={() => props.closeAlert()} dismissible>
-					{props.alert.context}
-				</Alert>
-			) : (
-				''
-			)}
-		</div>
-	);
+	return <div>{props.alert.toggle ? showAlert(props) : ''}</div>;
 }
 
 const mapStateToProps = (state, ownProps) => {
