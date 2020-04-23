@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/reactjs-practice-2020/static/css/main.b5c5612e.chunk.css",
-    "main.js": "/reactjs-practice-2020/static/js/main.49bfeb5f.chunk.js",
-    "main.js.map": "/reactjs-practice-2020/static/js/main.49bfeb5f.chunk.js.map",
-    "runtime-main.js": "/reactjs-practice-2020/static/js/runtime-main.151a795c.js",
-    "runtime-main.js.map": "/reactjs-practice-2020/static/js/runtime-main.151a795c.js.map",
-    "static/css/2.de424728.chunk.css": "/reactjs-practice-2020/static/css/2.de424728.chunk.css",
-    "static/js/2.d0edafa0.chunk.js": "/reactjs-practice-2020/static/js/2.d0edafa0.chunk.js",
-    "static/js/2.d0edafa0.chunk.js.map": "/reactjs-practice-2020/static/js/2.d0edafa0.chunk.js.map",
+    "main.css": "/reactjs-practice-2020/static/css/main.ef06c3dc.chunk.css",
+    "main.js": "/reactjs-practice-2020/static/js/main.34210d94.chunk.js",
+    "main.js.map": "/reactjs-practice-2020/static/js/main.34210d94.chunk.js.map",
+    "runtime-main.js": "/reactjs-practice-2020/static/js/runtime-main.5d158b23.js",
+    "runtime-main.js.map": "/reactjs-practice-2020/static/js/runtime-main.5d158b23.js.map",
+    "static/css/2.69121389.chunk.css": "/reactjs-practice-2020/static/css/2.69121389.chunk.css",
+    "static/js/2.e526ad6d.chunk.js": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js",
+    "static/js/2.e526ad6d.chunk.js.map": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js.map",
     "index.html": "/reactjs-practice-2020/index.html",
-    "precache-manifest.26e0e4720fcbda93dd29a530e714459c.js": "/reactjs-practice-2020/precache-manifest.26e0e4720fcbda93dd29a530e714459c.js",
+    "precache-manifest.6589a5d13d67d130bf4930b51a7d99bf.js": "/reactjs-practice-2020/precache-manifest.6589a5d13d67d130bf4930b51a7d99bf.js",
     "service-worker.js": "/reactjs-practice-2020/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/reactjs-practice-2020/static/css/2.de424728.chunk.css.map",
-    "static/css/main.b5c5612e.chunk.css.map": "/reactjs-practice-2020/static/css/main.b5c5612e.chunk.css.map",
-    "static/js/2.d0edafa0.chunk.js.LICENSE.txt": "/reactjs-practice-2020/static/js/2.d0edafa0.chunk.js.LICENSE.txt"
+    "static/css/2.69121389.chunk.css.map": "/reactjs-practice-2020/static/css/2.69121389.chunk.css.map",
+    "static/css/main.ef06c3dc.chunk.css.map": "/reactjs-practice-2020/static/css/main.ef06c3dc.chunk.css.map",
+    "static/js/2.e526ad6d.chunk.js.LICENSE.txt": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.151a795c.js",
-    "static/css/2.de424728.chunk.css",
-    "static/js/2.d0edafa0.chunk.js",
-    "static/css/main.b5c5612e.chunk.css",
-    "static/js/main.49bfeb5f.chunk.js"
+    "static/js/runtime-main.5d158b23.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.e526ad6d.chunk.js",
+    "static/css/main.ef06c3dc.chunk.css",
+    "static/js/main.34210d94.chunk.js"
   ]
 }
