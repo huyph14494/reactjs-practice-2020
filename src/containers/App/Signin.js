@@ -18,7 +18,7 @@ const handleSubmit = async ({ event, username, password, props, history, setLoad
 			await delay(2000);
 			let user = await BackendApi.get();
       props.loginBackend(user);
-      props.showAlert("Login Success...!", "danger");
+      props.showAlert("Login Success...!", "success");
 
 			history.replace('/');
       isStatusLogin = true;

@@ -4,22 +4,7 @@ import { connect } from 'react-redux';
 import { CLOSE_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { CSSTransition } from 'react-transition-group';
 
-function showAlert(props) {
-	return (
-		<CSSTransition in={props.alertAnimation.toggle} timeout={300} classNames={props.alertAnimation.classTransition} unmountOnExit>
-			<Alert
-				variant={props.alertAnimation.variant || 'success'}
-				bsPrefix={'alert alert-custom alert-' + (props.alertAnimation.variant || 'success') + ' box-shadow-1'}
-				onClose={() => props.closeAlert()}
-				dismissible
-			>
-				{props.alertAnimation.context}
-			</Alert>
-		</CSSTransition>
-	);
-}
-
-function AlertComponent(props) {
+function AlertAnimation(props) {
 	useEffect(
 		() => {
 			let timeout = setTimeout(function() {
@@ -27,7 +12,7 @@ function AlertComponent(props) {
 					// console.log('Alert useEffect');
 					props.closeAlert();
 				}
-			}, 1500);
+			}, 1250);
 			return () => {
 				// console.log('Clear Alert useEffect');
 				clearTimeout(timeout);
@@ -35,9 +20,27 @@ function AlertComponent(props) {
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[ props.alertAnimation.toggle ]
+  );
+  
+	return (
+		<div>
+			<CSSTransition
+				in={props.alertAnimation.toggle}
+				timeout={300}
+				classNames={props.alertAnimation.classTransition}
+				unmountOnExit
+			>
+				<Alert
+					variant={props.alertAnimation.variant || 'success'}
+					bsPrefix={'alert alert-custom alert-' + (props.alertAnimation.variant || 'success') + ' box-shadow-1'}
+					onClose={() => props.closeAlert()}
+					dismissible
+				>
+					{props.alertAnimation.context}
+				</Alert>
+			</CSSTransition>
+		</div>
 	);
-
-  return <div>{showAlert(props)}</div>;
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -54,4 +57,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlertComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(AlertAnimation);
