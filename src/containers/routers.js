@@ -1,6 +1,7 @@
 import Signin from 'src/containers/App/Signin';
 import List from 'src/containers/App/List';
 import MagicColor from './App/MagicColor';
+import AlertAnimation from 'src/containers/App/AlertAnimation';
 
 const routes = [
 	{
@@ -17,6 +18,11 @@ const routes = [
 		path: '/magic-color',
 		component: MagicColor,
 		name: 'Magic Color'
+  },
+  {
+		path: '/alert',
+		component: AlertAnimation,
+		name: 'Alert'
 	}
 ];
 
