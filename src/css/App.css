@@ -386,7 +386,6 @@ nav#sidebar ul.components a {
   transition: all 300ms ease-out;
 }
 
-
 @-webkit-keyframes animation-alert {
   from {
     opacity: 0;
@@ -412,6 +411,30 @@ nav#sidebar ul.components a {
           animation: animation-alert 1.2s ease;
 }
 
+@-webkit-keyframes animation-alert-hidden {
+  from {
+    opacity: 1;
+    right: 3px;
+  }
+  to {
+    opacity: 0;
+    right: -99vw;
+  }
+}
+@keyframes animation-alert-hidden {
+  from {
+    opacity: 1;
+    right: 3px;
+  }
+  to {
+    opacity: 0;
+    right: -99vw;
+  }
+}
+.run-animation-alert-hidden {
+  -webkit-animation: animation-alert-hidden 2.5s ease;
+          animation: animation-alert-hidden 2.5s ease;
+}
 /* ---------------------------------------------------
      Top
 ----------------------------------------------------- */

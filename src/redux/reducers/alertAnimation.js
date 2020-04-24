@@ -12,11 +12,20 @@ export default (state = { listAlert: [] }, { type, alert, alertId }) => {
 
 	switch (type) {
 		case actions.SHOW_ALERT_ANIMATION:
-      listAlertNew = [ ...state.listAlert ];
-      listAlertNew.push(alert);
+			listAlertNew = [ ...state.listAlert ];
+			listAlertNew.push(alert);
 			return { ...state, listAlert: listAlertNew };
 
 		case actions.CLOSE_ALERT_ANIMATION:
+			listAlertNew = state.listAlert.map((x) => {
+        if(x.id === alertId){
+          x.toggle = false;
+        }
+        return x;
+      });
+			return { ...state, listAlert: listAlertNew };
+
+		case actions.DELETE_ALERT_ANIMATION:
 			listAlertNew = state.listAlert.filter((x) => x.id !== alertId);
 			return { ...state, listAlert: listAlertNew };
 
