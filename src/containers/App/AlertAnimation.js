@@ -4,6 +4,19 @@ import { CSSTransition } from 'react-transition-group';
 import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
 import { randomVariant, createSentence } from 'src/helpers/common/random-alert';
+import { v1 as uuidv1 } from 'uuid';
+
+function showAlertAnimation(props) {
+	let alert = {
+		context: createSentence(),
+		variant: randomVariant(),
+		classTransition: 'toggen',
+		toggle: true,
+		id: uuidv1()
+	};
+
+	props.showAlertAnimation(alert);
+}
 
 function AlertAnimation(props) {
 	const [ showButton, setShowButton ] = useState(true);
@@ -12,7 +25,12 @@ function AlertAnimation(props) {
 	return (
 		<Container style={{ marginTop: '2rem' }}>
 			<Container style={{ marginTop: '2rem' }}>
-				<Button onClick={() => props.showAlertAnimation(createSentence(), randomVariant(), 'toggen')} size="lg" variant="success">
+				<h1 id="logo" className="run-animation">
+					Fancy Text
+				</h1>
+			</Container>
+			<Container style={{ marginTop: '2rem' }}>
+				<Button onClick={() => showAlertAnimation(props)} size="lg" variant="success">
 					Add Message
 				</Button>
 			</Container>
@@ -46,8 +64,8 @@ function AlertAnimation(props) {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		showAlertAnimation: (context, variant, classTransition) => {
-			dispatch({ type: SHOW_ALERT_ANIMATION, context, variant, classTransition });
+		showAlertAnimation: (alert) => {
+			dispatch({ type: SHOW_ALERT_ANIMATION, alert });
 		}
 	};
 };

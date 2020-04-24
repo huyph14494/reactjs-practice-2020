@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import routes from '../routers';
 import Navbar from '../../components/Navbar';
 import Alert from '../../components/Alert';
-import AlertAnimation from '../../components/AlertAnimation';
+import ListAlertAnimation from '../../components/ListAlertAnimation';
 import { BrowserRouter as Router } from 'react-router-dom';
 import config from '../../config/default';
 
@@ -16,7 +16,7 @@ function App(props) {
 		<div className="App">
 			<Router basename={'/' + config.prefix_web}>
         <Alert />
-        <AlertAnimation />
+        <ListAlertAnimation />
 				<Navbar />
 				<Header />
 				<MenuSidebar />

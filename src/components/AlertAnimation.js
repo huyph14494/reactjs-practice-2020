@@ -2,59 +2,54 @@ import React, { useEffect } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { connect } from 'react-redux';
 import { CLOSE_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
-import { CSSTransition } from 'react-transition-group';
+
+function closeAlert(props) {
+	props.closeAlert(props.id);
+}
 
 function AlertAnimation(props) {
 	useEffect(
 		() => {
 			let timeout = setTimeout(function() {
-				if (props.alertAnimation.toggle) {
+				if (props.toggle) {
 					// console.log('Alert useEffect');
-					props.closeAlert();
+					closeAlert(props);
 				}
-			}, 2200);
+			}, 3000);
 			return () => {
 				// console.log('Clear Alert useEffect');
 				clearTimeout(timeout);
 			};
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[ props.alertAnimation.toggle ]
-  );
-  
+		[ props.toggle ]
+	);
+
+	let classTop = 'top-' + (props.index * 65 + 20);
 	return (
 		<div>
-			<CSSTransition
-				in={props.alertAnimation.toggle}
-				timeout={300}
-				classNames={props.alertAnimation.classTransition}
-				unmountOnExit
-			>
+			{props.toggle ? (
 				<Alert
-					variant={props.alertAnimation.variant || 'success'}
-					bsPrefix={'alert alert-custom alert-' + (props.alertAnimation.variant || 'success') + ' box-shadow-1'}
-					onClose={() => props.closeAlert()}
+					variant={props.variant || 'success'}
+					bsPrefix={'alert alert-custom alert-' + (props.variant || 'success') + ' box-shadow-1 run-animation-alert ' + classTop}
+					onClose={() => closeAlert(props)}
 					dismissible
 				>
-					{props.alertAnimation.context}
+					{props.context}
 				</Alert>
-			</CSSTransition>
+			) : (
+				''
+			)}
 		</div>
 	);
 }
 
-const mapStateToProps = (state, ownProps) => {
-	return {
-		alertAnimation: state.alertAnimation
-	};
-};
-
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		closeAlert: () => {
-			dispatch({ type: CLOSE_ALERT_ANIMATION });
+		closeAlert: (alertId) => {
+			dispatch({ type: CLOSE_ALERT_ANIMATION, alertId });
 		}
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlertAnimation);
+export default connect(null, mapDispatchToProps)(AlertAnimation);
