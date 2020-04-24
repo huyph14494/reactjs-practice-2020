@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/reactjs-practice-2020/static/css/main.ef06c3dc.chunk.css",
-    "main.js": "/reactjs-practice-2020/static/js/main.34210d94.chunk.js",
-    "main.js.map": "/reactjs-practice-2020/static/js/main.34210d94.chunk.js.map",
+    "main.css": "/reactjs-practice-2020/static/css/main.541322ca.chunk.css",
+    "main.js": "/reactjs-practice-2020/static/js/main.c9f812a0.chunk.js",
+    "main.js.map": "/reactjs-practice-2020/static/js/main.c9f812a0.chunk.js.map",
     "runtime-main.js": "/reactjs-practice-2020/static/js/runtime-main.5d158b23.js",
     "runtime-main.js.map": "/reactjs-practice-2020/static/js/runtime-main.5d158b23.js.map",
     "static/css/2.69121389.chunk.css": "/reactjs-practice-2020/static/css/2.69121389.chunk.css",
-    "static/js/2.e526ad6d.chunk.js": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js",
-    "static/js/2.e526ad6d.chunk.js.map": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js.map",
+    "static/js/2.ecefa8ad.chunk.js": "/reactjs-practice-2020/static/js/2.ecefa8ad.chunk.js",
+    "static/js/2.ecefa8ad.chunk.js.map": "/reactjs-practice-2020/static/js/2.ecefa8ad.chunk.js.map",
     "index.html": "/reactjs-practice-2020/index.html",
-    "precache-manifest.6589a5d13d67d130bf4930b51a7d99bf.js": "/reactjs-practice-2020/precache-manifest.6589a5d13d67d130bf4930b51a7d99bf.js",
+    "precache-manifest.787bbe626157d7a46b106192acf7da28.js": "/reactjs-practice-2020/precache-manifest.787bbe626157d7a46b106192acf7da28.js",
     "service-worker.js": "/reactjs-practice-2020/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/reactjs-practice-2020/static/css/2.69121389.chunk.css.map",
-    "static/css/main.ef06c3dc.chunk.css.map": "/reactjs-practice-2020/static/css/main.ef06c3dc.chunk.css.map",
-    "static/js/2.e526ad6d.chunk.js.LICENSE.txt": "/reactjs-practice-2020/static/js/2.e526ad6d.chunk.js.LICENSE.txt"
+    "static/css/main.541322ca.chunk.css.map": "/reactjs-practice-2020/static/css/main.541322ca.chunk.css.map",
+    "static/js/2.ecefa8ad.chunk.js.LICENSE.txt": "/reactjs-practice-2020/static/js/2.ecefa8ad.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5d158b23.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.e526ad6d.chunk.js",
-    "static/css/main.ef06c3dc.chunk.css",
-    "static/js/main.34210d94.chunk.js"
+    "static/js/2.ecefa8ad.chunk.js",
+    "static/css/main.541322ca.chunk.css",
+    "static/js/main.c9f812a0.chunk.js"
   ]
 }
