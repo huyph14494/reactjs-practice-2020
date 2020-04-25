@@ -17,7 +17,7 @@ function MenuSidebar(props) {
 		<div>
 			{/* Sidebar  */}
 			<nav id="sidebar" className="text-left">
-				<div className="dismissMenu">
+				<div id="dismiss" className="dismissMenu">
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</div>
 				<div className="sidebar-header">
