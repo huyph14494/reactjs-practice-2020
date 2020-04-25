@@ -1,13 +1,20 @@
 import React, { useEffect } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { connect } from 'react-redux';
-import { CLOSE_ALERT } from 'src/redux/actions/alert';
+import { HIDDEN_ALERT, CLOSE_ALERT } from 'src/redux/actions/alert';
 
 function showAlert(props) {
+  let classCustom = '';
+  if (props.alert.toggle === 1) {
+		classCustom += ' run-animation-alert';
+	} else {
+		classCustom += ' run-animation-alert-hidden';
+  }
+  
 	return (
 		<Alert
 			variant={props.alert.variant || 'success'}
-			bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1'}
+			bsPrefix={'alert alert-custom alert-' + (props.alert.variant || 'success') + ' box-shadow-1 ' + classCustom}
 			onClose={() => props.closeAlert()}
 			dismissible
 		>
@@ -19,22 +26,31 @@ function showAlert(props) {
 function AlertComponent(props) {
 	useEffect(
 		() => {
-			let timeout = setTimeout(function() {
-				if (props.alert.toggle) {
-					// console.log('Alert useEffect');
+			let timeout = null;
+			if (props.alert.toggle === 1) {
+        // console.log('Alert useEffect');
+
+				timeout = setTimeout(function() {
+						props.hiddenAlert();
+				}, 3000);
+			} else if (props.alert.toggle === 2) {
+				setTimeout(function() {
 					props.closeAlert();
-				}
-			}, 2000);
+				}, 1500);
+			}
+
 			return () => {
-				// console.log('Clear Alert useEffect');
-				clearTimeout(timeout);
+				if (timeout) {
+          // console.log('Clear Alert useEffect');
+					clearTimeout(timeout);
+				}
 			};
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[ props.alert.toggle ]
 	);
 
-	return <div>{props.alert.toggle ? showAlert(props) : ''}</div>;
+	return <div>{ [1,2].indexOf(props.alert.toggle) !== -1 ? showAlert(props) : ''}</div>;
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -45,6 +61,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
+    hiddenAlert: () => {
+			dispatch({ type: HIDDEN_ALERT });
+		},
 		closeAlert: () => {
 			dispatch({ type: CLOSE_ALERT });
 		}
