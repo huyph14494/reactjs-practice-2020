@@ -6,7 +6,7 @@ import routes from 'src/containers/routers';
 
 function showMenu(location) {
 	return routes.map((value, key) => (
-		<li key={key} className={(location.pathname === value.path ? "active" : "")}>
+		<li key={key} className={(location.pathname === value.path ? "active" : "") + " dismissMenu"}>
 			<Link to={value.path}>{value.name}</Link>
 		</li>
 	));
@@ -17,7 +17,7 @@ function MenuSidebar(props) {
 		<div>
 			{/* Sidebar  */}
 			<nav id="sidebar" className="text-left">
-				<div id="dismiss">
+				<div className="dismissMenu">
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</div>
 				<div className="sidebar-header">
