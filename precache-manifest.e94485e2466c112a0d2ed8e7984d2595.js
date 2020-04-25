@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4c98a27a2a26d73211ca1406eacbdf51",
+    "revision": "7c5ba1a7706ac4b7f571d746e4552357",
     "url": "/reactjs-practice-2020/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reactjs-practice-2020/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "bcfcd2ddf989cae2a61f",
+    "revision": "97e47f590b41baf08569",
     "url": "/reactjs-practice-2020/static/css/main.0068e736.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reactjs-practice-2020/static/js/2.4ad6431f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bcfcd2ddf989cae2a61f",
-    "url": "/reactjs-practice-2020/static/js/main.88eef2ee.chunk.js"
+    "revision": "97e47f590b41baf08569",
+    "url": "/reactjs-practice-2020/static/js/main.59408df5.chunk.js"
   },
   {
     "revision": "bf2b17a3f6957b588165",
