@@ -1,7 +1,7 @@
-import Signin from 'src/containers/App/Signin';
-import List from 'src/containers/App/List';
-import MagicColor from './App/MagicColor';
-import AlertAnimation from 'src/containers/App/AlertAnimation';
+import Signin from 'src/containers/Siginin/Signin';
+import List from 'src/containers/List/List';
+import MagicColor from './MagicColor/MagicColor';
+import AlertAnimation from 'src/containers/Alert/AlertAnimation';
 
 const routes = [
 	{
