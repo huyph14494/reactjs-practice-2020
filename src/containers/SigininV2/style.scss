@@ -1,0 +1,43 @@
+.siginin {
+  &__form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  &__button {
+    color: white !important;
+    font-weight: bold !important;
+
+    &__container:hover &__div {
+      left: 0;
+    }
+
+    &__container {
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    &__div {
+      position: absolute;
+      z-index: -1;
+      width: 300%;
+      height: 100%;
+      left: -100%;
+      top: 0;
+
+      background-image: #a64bf4;
+      background-image: -webkit-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+      background-image: -o-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+      background-image: -moz-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+      background-image: linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  
+      -webkit-transition: all 0.6s;
+      -o-transition: all 0.6s;
+      -moz-transition: all 0.6s;
+      transition: all 0.6s;
+    }
+  }
+}

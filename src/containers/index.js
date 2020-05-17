@@ -24,7 +24,7 @@ function App(props) {
 
 				<Switch location={props.location}>
           {routes.map((route, i) => <Route exact key={i} {...route} />)}
-          <Redirect exact from="/" to="Sign-in" />
+          <Redirect exact from="/" to="Sign-in V1" />
           
           <Route component={NotFound} />
         </Switch>
