@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 import CanvasJSReact from '../../assets/canvasjs.react';
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -80,16 +81,21 @@ const Reports = () => {
 	};
 
 	return (
-		<div>
-			<CanvasJSChart
-				options={options}
-				/* onRef={ref => this.chart = ref} */
-			/>
-
-      <CanvasJSChart options = {options2} 
-				/* onRef={ref => this.chart = ref} */
-			/>
-		</div>
+		<Row className='ml-5 mr-5 mt-5'>
+			<Col className='mr-5'>
+				{' '}
+				<CanvasJSChart
+					options={options}
+					/* onRef={ref => this.chart = ref} */
+				/>
+			</Col>
+			<Col className='ml-5'>
+				<CanvasJSChart
+					options={options2}
+					/* onRef={ref => this.chart = ref} */
+				/>
+			</Col>
+		</Row>
 	);
 };
 
