@@ -6,6 +6,7 @@ const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const Reports = () => {
 	const options = {
+    height: 300,
 		animationEnabled: true,
 		exportEnabled: false,
 		theme: 'dark2', // "light1", "dark1", "dark2"
@@ -27,6 +28,7 @@ const Reports = () => {
 	};
 
 	const options2 = {
+    height: 300,
 		animationEnabled: true,
 		title: {
 			text: 'Number of New Customers'
