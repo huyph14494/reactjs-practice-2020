@@ -3,6 +3,7 @@ import List from 'src/containers/List/List';
 import MagicColor from './MagicColor/MagicColor';
 import AlertAnimation from 'src/containers/Alert/AlertAnimation';
 import SigininV2 from './SigininV2';
+import Reports from './Reports';
 
 const routes = [
 	{
@@ -29,6 +30,11 @@ const routes = [
 		path: '/alert',
 		component: AlertAnimation,
 		name: 'Alert'
+  },
+  {
+		path: '/reports',
+		component: Reports,
+		name: 'Reports'
 	}
 ];
 
