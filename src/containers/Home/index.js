@@ -45,7 +45,7 @@ function Home(props) {
 				<Col xs={12} md={8}>
 					<List news={news} />
 				</Col>
-				<Col className="pl-4" xs={4}>
+				<Col className="pl-4 pr-4" md={4}>
 					<SideRight />
 				</Col>
 			</Row>
