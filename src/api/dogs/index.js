@@ -22,7 +22,7 @@ class DogsApi {
 
 	getImageDogs(limit = 10) {
 		return new Promise((resolve, reject) => {
-      if(limit > 30 || limit < 1){
+      if(limit > 50 || limit < 1){
         limit = 10;
       }
       

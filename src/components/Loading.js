@@ -1,36 +1,17 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 
 function Loading(props) {
-	console.log('Loading');
-
 	return (
-		<div className="loading-page">
-			<div>
-				<div className="spinner-grow text-primary" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-secondary" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-success" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-danger" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-warning" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-info" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-light" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-				<div className="spinner-grow text-dark" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
-			</div>
+		<div>
+			<Spinner animation="grow" variant="primary" />
+			<Spinner animation="grow" variant="secondary" />
+			<Spinner animation="grow" variant="success" />
+			<Spinner animation="grow" variant="danger" />
+			<Spinner animation="grow" variant="warning" />
+			<Spinner animation="grow" variant="info" />
+			{/* <Spinner animation="grow" variant="light" /> */}
+			<Spinner animation="grow" variant="dark" />
 		</div>
 	);
 }

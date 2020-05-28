@@ -1,5 +1,6 @@
 import React from 'react';
-const PUBLIC_URL = process.env.PUBLIC_URL;
+import LazyLoad from 'react-lazyload';
+import Loading from 'src/components/Loading';
 
 function Item(props) {
 	let dateNow = new Date();
@@ -15,19 +16,25 @@ function Item(props) {
 					<div className="container">
 						<div className="row">
 							<div className="col-md-7 col-xs-12 flex-center">
-								<div
-									style={{ maxHeight: 180, maxWidth: 320, height: '45vw', width: '80vw' }}
-									className="text-center frame"
+								<LazyLoad
+									once={true}
+									placeholder={<Loading />}
+									debounce={200}
 								>
-									<picture>
-										<img
-											style={{ height: '100%' }}
-											src={props.data.image}
-											alt={props.data.image}
-											className="img-thumbnail img-fluid"
-										/>
-									</picture>
-								</div>
+									<div
+										style={{ maxHeight: 180, maxWidth: 320, height: '45vw', width: '80vw' }}
+										className="text-center frame"
+									>
+										<picture>
+											<img
+												style={{ height: '100%' }}
+												src={props.data.image}
+												alt={props.data.image}
+												className="img-thumbnail img-fluid"
+											/>
+										</picture>
+									</div>
+								</LazyLoad>
 							</div>
 							<div className="col-md-5 col-xs-12 text-left p-r-l-10-vw">
 								<p className="font-130-per mt-4">

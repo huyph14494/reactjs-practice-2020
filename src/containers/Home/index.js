@@ -28,7 +28,7 @@ function Home(props) {
     let fetchApi = async () => {
       try { 
         await delay(1500);
-        let dataNew = await dogs.getImageDogs(10);
+        let dataNew = await dogs.getImageDogs(50);
         setNews(dataNew);
       } catch(errors) {
         showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
