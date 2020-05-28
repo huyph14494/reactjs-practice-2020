@@ -9,6 +9,7 @@ import ListAlertAnimation from '../components/ListAlertAnimation';
 import { BrowserRouter as Router } from 'react-router-dom';
 import config from '../config/default';
 import NotFound from './NotFound';
+import TopButton from 'src/components/TopButton';
 
 function App(props) {
   console.log("App");
@@ -21,6 +22,7 @@ function App(props) {
 				<Navbar />
 				<Header />
 				<MenuSidebar />
+        <TopButton />
 
 				<Switch location={props.location}>
           {routes.map((route, i) => <Route exact key={i} {...route} />)}

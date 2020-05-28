@@ -1,0 +1,33 @@
+.round-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+
+  &-circle {
+    width:55px;
+    height:55px;
+    border-radius: 50%;
+    border: 7px solid #d22417c4;
+    background: white; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  & a {
+    width: 55px;
+    height:55px;
+    line-height:1em;
+    padding-top: 21px;
+    text-align:center;
+    color:#212529;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size: 13px;
+    text-decoration:none;
+  }
+
+  & a:hover {
+    text-decoration:none;
+    color: #dc3545;
+  }
+}
