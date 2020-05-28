@@ -1,6 +1,13 @@
 import nouns from '../words/nouns';
 import adjectives from '../words/adjectives';
 
+function createNoun() {
+	let noun = nouns[Math.floor(Math.random() * nouns.length)];
+	let contentNoun = 'The ' + noun;
+
+	return contentNoun;
+}
+
 function createSentence() {
 	let noun = nouns[Math.floor(Math.random() * nouns.length)];
 	let adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
@@ -16,4 +23,4 @@ function randomVariant() {
 	return listAlert[Math.floor(Math.random() * listAlert.length)];
 }
 
-export { createSentence, randomVariant };
+export { createSentence, createNoun, randomVariant };

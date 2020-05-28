@@ -22,7 +22,7 @@ function Item(props) {
 									<picture>
 										<img
 											style={{ height: '100%' }}
-											src={PUBLIC_URL + '/images/' + props.data.image}
+											src={props.data.image}
 											alt={props.data.image}
 											className="img-thumbnail img-fluid"
 										/>

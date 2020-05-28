@@ -1,5 +1,5 @@
 import Signin from 'src/containers/SigininV1/Signin';
-import List from 'src/containers/List/List';
+import Home from 'src/containers/Home';
 import MagicColor from './MagicColor/MagicColor';
 import AlertAnimation from 'src/containers/Alert/AlertAnimation';
 import SigininV2 from './SigininV2';
@@ -8,7 +8,7 @@ import Reports from './Reports';
 const routes = [
 	{
 		path: '/',
-		component: List,
+		component: Home,
 		name: 'Home'
 	},
 	{
