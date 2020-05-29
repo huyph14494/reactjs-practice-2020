@@ -10,7 +10,7 @@ export default function TopButton() {
 	return (
 		<div className="round-button">
 			<div className="round-button-circle">
-				<a href="#" className="round-button" onClick={handleClick}>
+				<a href="!#" className="round-button" onClick={handleClick}>
 					Top
 				</a>
 			</div>

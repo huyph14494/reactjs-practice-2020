@@ -16,7 +16,8 @@ class DogsApi {
 	constructor() {
 		this.instance = Axios.create({
 			baseURL: 'https://dog.ceo',
-			timeout: 10000
+      timeout: 10000,
+      headers: {'Access-Control-Allow-Origin': '*'}
 		});
 	}
 

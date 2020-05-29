@@ -4,6 +4,7 @@ function allowDrop(ev) {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
+  ev.target.style.opacity = '1.0';
 }
 
 

@@ -8,7 +8,6 @@ let listItems = [ 'ListGroupDanger', 'ListGroupWarning', 'ListGroupSuccess', 'Li
 
 function showItems(listGroup, sort) {
 	return listGroup.map((value, index) => {
-		// eslint-disable-next-line default-case
 		switch (value) {
 			case 'ListGroupDanger':
 				return <ListGroupDanger headerType={'danger'} id={index} key={index} sort={sort} />;
@@ -17,7 +16,9 @@ function showItems(listGroup, sort) {
 			case 'ListGroupSuccess':
 				return <ListGroupSuccess headerType={'success'} id={index} key={index} sort={sort} />;
 			case 'ListGroupPrimary':
-				return <ListGroupPrimary headerType={'primary'} id={index} key={index} sort={sort} />;
+        return <ListGroupPrimary headerType={'primary'} id={index} key={index} sort={sort} />;
+      default:
+        return null;
 		}
 	});
 }

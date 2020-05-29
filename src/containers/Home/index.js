@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import List from './components/List';
 import SideRight from './components/SideRight';
 import dogs from 'src/api/dogs';
@@ -22,25 +22,42 @@ function showAlertAnimation(props, error) {
 }
 
 function Home(props) {
-  const [news, setNews] = useState([]);
+	const [ news, setNews ] = useState([]);
 
-  useEffect(() => {
-    let fetchApi = async () => {
-      try { 
-        await delay(3000);
-        let dataNew = await dogs.getImageDogs(5);
-        setNews(dataNew);
-      } catch(errors) {
-        showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-      }
-    };
+	useEffect(() => {
+		let fetchApi = async () => {
+			// try {
+			//   await delay(3000);
+			//   let dataNew = await dogs.getImageDogs(5);
+			//   setNews(dataNew);
+			// } catch(errors) {
+			//   showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+			// }
+		};
 
-    fetchApi();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+		fetchApi();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	let onRefresh = async () => {
+		try {
+			await delay(3000);
+			let dataNew = await dogs.getImageDogs(5);
+			setNews(dataNew);
+		} catch (errors) {
+			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+		}
+	};
 
 	return (
 		<Container>
+			<Row className={'mt-4 mb-4'}>
+				<Col xs={12}>
+					<Button variant="outline-danger" onClick={onRefresh}>
+						Refresh
+					</Button>
+				</Col>
+			</Row>
 			<Row>
 				<Col xs={12} md={8}>
 					<List news={news} />
@@ -53,7 +70,7 @@ function Home(props) {
 	);
 }
 
-Home.displayName = "Home";
+Home.displayName = 'Home';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
