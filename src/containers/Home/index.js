@@ -27,7 +27,7 @@ function Home(props) {
   useEffect(() => {
     let fetchApi = async () => {
       try { 
-        await delay(1500);
+        await delay(3000);
         let dataNew = await dogs.getImageDogs(5);
         setNews(dataNew);
       } catch(errors) {

@@ -1,9 +1,17 @@
 import React from 'react';
 import { Container, ListGroup } from 'react-bootstrap';
+import { allowDrop, drop, drag } from '../helpers/drag';
 
-export default function ListGroupComponent(props) {
+export default function ListGroupSuccess(props) {
 	return (
-		<Container className={(props.isFirst ? 'side_right__mtop_first' : '') + ' side_right__container'}>
+    <Container 
+      className={'side_right__container'}
+      onDrop={(event) => drop(event, props.sort)}
+      onDragOver={allowDrop}
+      draggable={true} 
+      onDragStart={drag}
+      id={props.id}
+      >
 			<ListGroup className={'side_right__list_group_' + (props.headerType || 'danger')}>
 				<ListGroup.Item className={'side_right__list_group_' + (props.headerType || 'danger') + '__header'}>
 					Cras justo odio
