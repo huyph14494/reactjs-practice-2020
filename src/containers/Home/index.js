@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import List from './components/List';
 import SideRight from './components/SideRight';
-import dogs from 'src/api/dogs';
+import backend from 'src/api/backend';
 import { delay } from 'redux-saga/effects';
 import { v1 as uuidv1 } from 'uuid';
 import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
 import './scss/list.scss';
+const LIMIT_IMAGE = 5;
 
 function showAlertAnimation(props, error) {
 	let alert = {
@@ -26,13 +27,13 @@ function Home(props) {
 
 	useEffect(() => {
 		let fetchApi = async () => {
-			// try {
-			//   await delay(3000);
-			//   let dataNew = await dogs.getImageDogs(5);
-			//   setNews(dataNew);
-			// } catch(errors) {
-			//   showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-			// }
+			try {
+			  await delay(1000);
+			  let dataNew = await backend.getPhotos(LIMIT_IMAGE);
+			  setNews(dataNew);
+			} catch(errors) {
+			  showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+			}
 		};
 
 		fetchApi();
@@ -42,7 +43,7 @@ function Home(props) {
 	let onRefresh = async () => {
 		try {
 			await delay(3000);
-			let dataNew = await dogs.getImageDogs(5);
+			let dataNew = await backend.getPhotos(LIMIT_IMAGE);
 			setNews(dataNew);
 		} catch (errors) {
 			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');

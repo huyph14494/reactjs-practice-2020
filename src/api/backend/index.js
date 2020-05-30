@@ -1,5 +1,7 @@
 import Axios from 'axios';
 import config from 'src/config/default';
+import { createNoun, createSentence } from 'src/helpers/common/random-alert';
+import { v1 as uuidv1 } from 'uuid';
 
 class BackendApi {
 	constructor() {
@@ -9,23 +11,40 @@ class BackendApi {
 		});
 	}
 
-	get() {
-		return new Promise((resolve, reject) => {
-      return	resolve({ a: 1 });
 
-			// this.instance({ url: '/api/auth/signup', method: 'get' })
-			// 	.then(function(response) {
-			// 		// handle success
-			// 		console.log(response);
-			// 		resolve({ a: 1 });
-			// 	})
-			// 	.catch(function(error) {
-			// 		// handle error
-			// 		console.log(error);
-			// 		resolve({ a: 2 });
-			// 	});
+  getPhotos(limit = 10) {
+		return new Promise((resolve, reject) => {
+      if(limit > 50 || limit < 1){
+        limit = 10;
+      }
+      
+			this.instance({ url: '/api/photos/random/' + limit, method: 'get' })
+				.then(function(response) {
+					if (
+            response &&
+						response.data &&
+						(Array.isArray(response.data) || response.data.length > 0)
+					) {
+						let data = response.data.map((element) => {
+							return {
+								id: uuidv1(),
+								name: createNoun(),
+								descriptions: createSentence(),
+								image: element
+							};
+						});
+						resolve(data);
+					} else {
+						console.log('getPhotos No Photo');
+						reject('getPhotos Errors');
+					}
+				})
+				.catch(function(error) {
+					console.log('getPhotos ' + error);
+					reject('getPhotos Errors');
+				});
 		});
-	}
+  }
 }
 
 // const instance = Axios.create({
