@@ -39,3 +39,38 @@
     }
   }
 }
+
+.container-show {
+  max-height: 500px;
+  height: 100%;
+  transition: max-height 0.85s ease-in-out -0.3s;
+}
+
+.container-hidden {
+  max-height: 56px;
+  overflow: hidden;
+  transition: max-height 0.85s ease-in-out -0.3s;
+}
+
+// .contain-show {
+//   -webkit-transform: scaleY(1);
+// 	-o-transform: scaleY(1);
+// 	-ms-transform: scaleY(1);
+// 	transform: scaleY(1);
+
+// 	-webkit-transform-origin: bottom;
+// 	-o-transform-origin: bottom;
+// 	-ms-transform-origin: bottom;
+// 	transform-origin: bottom;
+
+// 	-webkit-transition: -webkit-transform 0.26s ease-out;
+// 	-o-transition: -o-transform 0.26s ease;
+// 	-ms-transition: -ms-transform 0.26s ease;
+// 	transition: transform 0.26s ease;
+// }
+// .contain-hidden {
+//   -webkit-transform: scaleY(0);
+// 	-o-transform: scaleY(0);
+// 	-ms-transform: scaleY(0);
+// 	transform: scaleY(0);
+// }
