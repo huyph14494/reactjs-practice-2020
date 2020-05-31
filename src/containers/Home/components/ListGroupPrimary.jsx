@@ -1,19 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Container, ListGroup, Row, Col } from 'react-bootstrap';
 import { allowDrop, drop, drag } from '../helpers/drag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons';
+import { faMinusSquare, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function ListGroupPrimary(props) {
-	const [toggle, setToggle] = useState(props.toggle);
+	const [ toggle, setToggle ] = useState(props.toggle);
 
 	const handleMinimize = () => {
-    props.onHandleToggle(props.id);
-    setToggle(!toggle);
+		props.onHandleToggle(props.id);
+		setToggle(!toggle);
 	};
 
 	return (
-		<Container className={'side_right__container'}>
+		<Container
+			className={'side_right__container'}
+			index={props.index}
+      onDrop={(event) => drop(event, props.sort)}
+      onDragOver={allowDrop}
+		>
 			<ListGroup
 				className={
 					'side_right__list_group_' +
@@ -23,11 +28,9 @@ export default function ListGroupPrimary(props) {
 			>
 				<ListGroup.Item
 					className={'side_right__list_group_' + (props.headerType || 'danger') + '__header'}
-					onDrop={(event) => drop(event, props.sort)}
-					onDragOver={allowDrop}
 					draggable={true}
 					onDragStart={drag}
-					id={props.index}
+          index={props.index}
 				>
 					<Row>
 						<Col xs={10} className={'text-left'}>
@@ -36,7 +39,7 @@ export default function ListGroupPrimary(props) {
 						<Col xs={2}>
 							<FontAwesomeIcon
 								onClick={handleMinimize}
-								icon={faMinusSquare}
+								icon={toggle ? faMinusSquare : faPlusSquare}
 								style={{ height: '24px', width: '24px', cursor: 'pointer' }}
 							/>
 						</Col>
