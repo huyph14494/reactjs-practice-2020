@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import List from './components/List';
+import List from './components/ListPhoto';
 import SideRight from './components/SideRight';
 import backend from 'src/api/backend';
 import { delay } from 'redux-saga/effects';
 import { v1 as uuidv1 } from 'uuid';
 import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
-import ItemModal from './components/ItemModal';
+import PhotoModal from './components/PhotoModal';
 import './scss/list.scss';
 const LIMIT_IMAGE = 5;
 
@@ -85,7 +85,7 @@ function Home(props) {
 					<SideRight />
 				</Col>
 			</Row>
-      <ItemModal></ItemModal>
+      <PhotoModal></PhotoModal>
 		</Container>
 	);
 }

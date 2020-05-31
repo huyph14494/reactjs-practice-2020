@@ -1,10 +1,10 @@
 import React from 'react';
-import Item from './Item';
+import Photo from './Photo';
 import Loading from 'src/components/Loading';
 
 function showList(data) {
 	if (data && data.length) {
-		return data.map((value, key) => <Item data={value} key={key} id={key} />);
+		return data.map((value, key) => <Photo data={value} key={key} id={key} />);
 	} else {
 		return (
 			<tbody>
@@ -37,10 +37,13 @@ function showList(data) {
 // 	return arra1;
 // }
 
-export default React.memo(function List(props) {
+function ListPhoto(props) {
 	return (
 		<section className="max-width-800">
 			<table className="table table-hover table-borderless border-collapse-separate">{showList(props.news)}</table>
   	</section>
 	);
-});
+};
+
+ListPhoto.displayName = 'ListPhoto';
+export default React.memo(ListPhoto);

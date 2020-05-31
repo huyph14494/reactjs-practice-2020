@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { CLOSE_ITEM_MODAL } from 'src/redux/actions/itemModal';
 
-function ItemModal(props) {
+function PhotoModal(props) {
 	const handleClose = () => props.onCloseModal();
 
 	return (
@@ -24,7 +24,7 @@ function ItemModal(props) {
 	);
 }
 
-ItemModal.displayName = 'ItemModal';
+PhotoModal.displayName = 'PhotoModal';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemModal);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoModal);

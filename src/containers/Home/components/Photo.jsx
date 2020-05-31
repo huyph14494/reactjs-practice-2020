@@ -4,7 +4,7 @@ import Loading from 'src/components/Loading';
 import { connect } from 'react-redux';
 import {SHOW_ITEM_MODAL} from 'src/redux/actions/itemModal';
 
-function Item(props) {
+function Photo(props) {
 	let dateNow = new Date();
   props.data.dateNow = dateNow.toLocaleString();
   const handleShow = () => {
@@ -60,7 +60,7 @@ function Item(props) {
 	);
 }
 
-Item.displayName = 'Item';
+Photo.displayName = 'Photo';
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
@@ -70,4 +70,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-export default connect(null, mapDispatchToProps)(Item);
+export default connect(null, mapDispatchToProps)(Photo);
