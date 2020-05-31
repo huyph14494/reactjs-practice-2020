@@ -10,6 +10,21 @@ import { connect } from 'react-redux';
 import './scss/list.scss';
 const LIMIT_IMAGE = 5;
 
+const randomNews = (news) => {
+  let list = [];
+  let listNews = [];
+  while(list.length < LIMIT_IMAGE){
+    const index = Math.floor(Math.random() * news.length);
+
+    if(list.indexOf(index) === -1){
+      list.push(index);
+      listNews.push(news[index]);
+    }
+  }
+
+  return listNews;
+};
+
 function showAlertAnimation(props, error) {
 	let alert = {
 		context: error,
@@ -32,7 +47,8 @@ function Home(props) {
 			  let dataNew = await backend.getPhotos(LIMIT_IMAGE);
 			  setNews(dataNew);
 			} catch(errors) {
-			  showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+        showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+        setNews(randomNews(props.news));
 			}
 		};
 
@@ -46,7 +62,8 @@ function Home(props) {
 			let dataNew = await backend.getPhotos(LIMIT_IMAGE);
 			setNews(dataNew);
 		} catch (errors) {
-			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+      showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+      setNews(randomNews(props.news));
 		}
 	};
 
@@ -73,6 +90,12 @@ function Home(props) {
 
 Home.displayName = 'Home';
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    news: state.news
+  }
+}
+
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		showAlertAnimation: (alert) => {
@@ -81,4 +104,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	};
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
