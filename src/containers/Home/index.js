@@ -7,22 +7,23 @@ import { delay } from 'redux-saga/effects';
 import { v1 as uuidv1 } from 'uuid';
 import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
+import ItemModal from './components/ItemModal';
 import './scss/list.scss';
 const LIMIT_IMAGE = 5;
 
 const randomNews = (news) => {
-  let list = [];
-  let listNews = [];
-  while(list.length < LIMIT_IMAGE){
-    const index = Math.floor(Math.random() * news.length);
+	let list = [];
+	let listNews = [];
+	while (list.length < LIMIT_IMAGE) {
+		const index = Math.floor(Math.random() * news.length);
 
-    if(list.indexOf(index) === -1){
-      list.push(index);
-      listNews.push(news[index]);
-    }
-  }
+		if (list.indexOf(index) === -1) {
+			list.push(index);
+			listNews.push(news[index]);
+		}
+	}
 
-  return listNews;
+	return listNews;
 };
 
 function showAlertAnimation(props, error) {
@@ -43,18 +44,18 @@ function Home(props) {
 	useEffect(() => {
 		let fetchApi = async () => {
 			try {
-			  await delay(1000);
-			  let dataNew = await backend.getPhotos(LIMIT_IMAGE);
-			  setNews(dataNew);
-			} catch(errors) {
-        showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-        setNews(randomNews(props.news));
+				await delay(1000);
+				let dataNew = await backend.getPhotos(LIMIT_IMAGE);
+				setNews(dataNew);
+			} catch (errors) {
+				showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+				setNews(randomNews(props.news));
 			}
 		};
 
 		fetchApi();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  }, []);
 
 	let onRefresh = async () => {
 		try {
@@ -62,8 +63,8 @@ function Home(props) {
 			let dataNew = await backend.getPhotos(LIMIT_IMAGE);
 			setNews(dataNew);
 		} catch (errors) {
-      showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-      setNews(randomNews(props.news));
+			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
+			setNews(randomNews(props.news));
 		}
 	};
 
@@ -84,6 +85,7 @@ function Home(props) {
 					<SideRight />
 				</Col>
 			</Row>
+      <ItemModal></ItemModal>
 		</Container>
 	);
 }
@@ -91,10 +93,10 @@ function Home(props) {
 Home.displayName = 'Home';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    news: state.news
-  }
-}
+	return {
+		news: state.news
+	};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {

@@ -1,10 +1,15 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import Loading from 'src/components/Loading';
+import { connect } from 'react-redux';
+import {SHOW_ITEM_MODAL} from 'src/redux/actions/itemModal';
 
 function Item(props) {
 	let dateNow = new Date();
-	props.data.dateNow = dateNow.toLocaleString();
+  props.data.dateNow = dateNow.toLocaleString();
+  const handleShow = () => {
+    props.onOpenModal(props.data);
+  }
 
 	return (
 		<tbody>
@@ -16,11 +21,7 @@ function Item(props) {
 					<div className="container">
 						<div className="row">
 							<div className="col-md-7 col-xs-12 flex-center">
-								<LazyLoad
-									once={true}
-									placeholder={<Loading />}
-									debounce={200}
-								>
+								<LazyLoad once={true} placeholder={<Loading />} debounce={200}>
 									<div
 										style={{ maxHeight: 180, maxWidth: 320, height: '45vw', width: '80vw' }}
 										className="text-center frame"
@@ -43,7 +44,7 @@ function Item(props) {
 								<p className="font-80-per">{props.data.descriptions}</p>
 								<p className="font-80-per">{props.data.dateNow}</p>
 								<p>
-									<button type="button" className="btn btn-danger mr-3 font-80-per">
+									<button type="button" className="btn btn-danger mr-3 font-80-per" onClick={handleShow}>
 										Danger
 									</button>
 									<button type="button" className="btn btn-warning font-80-per">
@@ -59,4 +60,14 @@ function Item(props) {
 	);
 }
 
-export default Item;
+Item.displayName = 'Item';
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+		onOpenModal: (item) => {
+			dispatch({ type: SHOW_ITEM_MODAL, item });
+		}
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Item);

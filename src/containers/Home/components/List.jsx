@@ -37,10 +37,10 @@ function showList(data) {
 // 	return arra1;
 // }
 
-export default function List(props) {
+export default React.memo(function List(props) {
 	return (
 		<section className="max-width-800">
 			<table className="table table-hover table-borderless border-collapse-separate">{showList(props.news)}</table>
-		</section>
+  	</section>
 	);
-}
+});

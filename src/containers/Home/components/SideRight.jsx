@@ -85,7 +85,7 @@ function showItems(listGroup, sort, onHandleToggle) {
 	});
 }
 
-export default function SideRight() {
+export default React.memo(function SideRight() {
 	const [ listGroup, setListGroup ] = useState(listItems);
 	const onHandleToggle = (id) => {
     listItems = listItems.map(value => {
@@ -117,4 +117,4 @@ export default function SideRight() {
 	};
 
 	return <div className="side_right__mtop_first">{showItems(listGroup, sort, onHandleToggle)}</div>;
-}
+});
