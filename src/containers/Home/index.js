@@ -9,21 +9,21 @@ import { SHOW_ALERT_ANIMATION } from 'src/redux/actions/alertAnimation';
 import { connect } from 'react-redux';
 import PhotoModal from './components/PhotoModal';
 import './scss/list.scss';
-const LIMIT_IMAGE = 5;
+const LIMIT_PHOTOS = 5;
 
-const randomNews = (news) => {
+const randomPhotos = (photos) => {
 	let list = [];
-	let listNews = [];
-	while (list.length < LIMIT_IMAGE) {
-		const index = Math.floor(Math.random() * news.length);
+	let listPhoto = [];
+	while (list.length < LIMIT_PHOTOS) {
+		const index = Math.floor(Math.random() * photos.length);
 
 		if (list.indexOf(index) === -1) {
 			list.push(index);
-			listNews.push(news[index]);
+			listPhoto.push(photos[index]);
 		}
 	}
 
-	return listNews;
+	return listPhoto;
 };
 
 function showAlertAnimation(props, error) {
@@ -39,17 +39,17 @@ function showAlertAnimation(props, error) {
 }
 
 function Home(props) {
-	const [ news, setNews ] = useState([]);
+	const [ photos, setPhotos ] = useState([]);
 
 	useEffect(() => {
 		let fetchApi = async () => {
 			try {
 				await delay(1000);
-				let dataNew = await backend.getPhotos(LIMIT_IMAGE);
-				setNews(dataNew);
+				let dataNew = await backend.getPhotos(LIMIT_PHOTOS);
+				setPhotos(dataNew);
 			} catch (errors) {
 				showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-				setNews(randomNews(props.news));
+				setPhotos(randomPhotos(props.photos));
 			}
 		};
 
@@ -60,11 +60,11 @@ function Home(props) {
 	let onRefresh = async () => {
 		try {
 			await delay(3000);
-			let dataNew = await backend.getPhotos(LIMIT_IMAGE);
-			setNews(dataNew);
+			let dataNew = await backend.getPhotos(LIMIT_PHOTOS);
+			setPhotos(dataNew);
 		} catch (errors) {
 			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
-			setNews(randomNews(props.news));
+			setPhotos(randomPhotos(props.photos));
 		}
 	};
 
@@ -79,7 +79,7 @@ function Home(props) {
 			</Row>
 			<Row>
 				<Col xs={12} md={8}>
-					<List news={news} />
+					<List photos={photos} />
 				</Col>
 				<Col className="pl-4 pr-4" md={4}>
 					<SideRight />
@@ -94,7 +94,7 @@ Home.displayName = 'Home';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		news: state.news
+		photos: state.news
 	};
 };
 

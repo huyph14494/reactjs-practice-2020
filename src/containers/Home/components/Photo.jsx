@@ -2,7 +2,7 @@ import React from 'react';
 import LazyLoad from 'react-lazyload';
 import Loading from 'src/components/Loading';
 import { connect } from 'react-redux';
-import {SHOW_ITEM_MODAL} from 'src/redux/actions/itemModal';
+import {SHOW_PHOTO_MODAL} from 'src/redux/actions/photoModal';
 
 function Photo(props) {
 	let dateNow = new Date();
@@ -65,7 +65,7 @@ Photo.displayName = 'Photo';
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onOpenModal: (item) => {
-			dispatch({ type: SHOW_ITEM_MODAL, item });
+			dispatch({ type: SHOW_PHOTO_MODAL, item });
 		}
 	};
 };

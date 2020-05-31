@@ -1,0 +1,2 @@
+export const SHOW_PHOTO_MODAL = 'SHOW_PHOTO_MODAL';
+export const CLOSE_PHOTO_MODAL = 'CLOSE_PHOTO_MODAL';

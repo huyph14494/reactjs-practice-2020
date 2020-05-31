@@ -40,7 +40,7 @@ function showList(data) {
 function ListPhoto(props) {
 	return (
 		<section className="max-width-800">
-			<table className="table table-hover table-borderless border-collapse-separate">{showList(props.news)}</table>
+			<table className="table table-hover table-borderless border-collapse-separate">{showList(props.photos)}</table>
   	</section>
 	);
 };

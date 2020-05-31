@@ -1,13 +1,13 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { CLOSE_ITEM_MODAL } from 'src/redux/actions/itemModal';
+import { CLOSE_PHOTO_MODAL } from 'src/redux/actions/photoModal';
 
 function PhotoModal(props) {
 	const handleClose = () => props.onCloseModal();
 
 	return (
-		<Modal show={props.itemModal.toggle} onHide={handleClose}>
+		<Modal show={props.photoModal.toggle} onHide={handleClose}>
 			<Modal.Header closeButton>
 				<Modal.Title>Modal heading</Modal.Title>
 			</Modal.Header>
@@ -28,14 +28,14 @@ PhotoModal.displayName = 'PhotoModal';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		itemModal: state.itemModal
+		photoModal: state.photoModal
 	};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onCloseModal: () => {
-			dispatch({ type: CLOSE_ITEM_MODAL });
+			dispatch({ type: CLOSE_PHOTO_MODAL });
 		}
 	};
 };
