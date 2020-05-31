@@ -17,7 +17,7 @@ function Photo(props) {
 				{/* <th scope="row" className="text-center vertical-align-middle">
 					{props.id + 1}
 				</th> */}
-				<td className="p-r-l-none p-t-b-1-5rem">
+				<td className="p-r-l-none p-t-b-1-5rem cursor-pointer" onClick={handleShow}>
 					<div className="container">
 						<div className="row">
 							<div className="col-md-7 col-xs-12 flex-center">
@@ -44,7 +44,7 @@ function Photo(props) {
 								<p className="font-80-per">{props.data.descriptions}</p>
 								<p className="font-80-per">{props.data.dateNow}</p>
 								<p>
-									<button type="button" className="btn btn-danger mr-3 font-80-per" onClick={handleShow}>
+									<button type="button" className="btn btn-danger mr-3 font-80-per">
 										Danger
 									</button>
 									<button type="button" className="btn btn-warning font-80-per">
