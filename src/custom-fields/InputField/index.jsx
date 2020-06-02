@@ -26,7 +26,7 @@ function InputField(props) {
 	const { errors, touched } = form;
 	const showError = errors[name] && touched[name];
 
-	return (
+  return (
 		<Form.Group md="12">
 			{label && <Form.Label htmlFor={name}><b>{label}</b></Form.Label>}
 

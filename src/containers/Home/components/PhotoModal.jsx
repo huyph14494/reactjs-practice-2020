@@ -15,8 +15,9 @@ function PhotoModal(props) {
 	};
 
 	const validationSchema = Yup.object().shape({
-		name: Yup.string().required('This field is required.'),
-		descriptions: Yup.string().required('This field is required.')
+		name: Yup.string().required('This name field is required.'),
+    descriptions: Yup.string().required('This descriptions field is required.'),
+    photo: Yup.string().required('This photo field is required.'),
 	});
 
 	const handleClose = () => props.onCloseModal();
