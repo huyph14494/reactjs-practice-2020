@@ -20,7 +20,10 @@ function PhotoModal(props) {
     photo: Yup.string().required('This photo field is required.'),
 	});
 
-	const handleClose = () => props.onCloseModal();
+  const handleClose = () => props.onCloseModal();
+  const handleSubmit = () => {
+    props.onCloseModal();
+  }
 
 	return (
 		<Modal
@@ -32,12 +35,12 @@ function PhotoModal(props) {
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
-				onSubmit={(values) => console.log('Submit: ', values)}
+				onSubmit={(values) => handleSubmit(values)}
 			>
 				{(formikProps) => {
 					// do something here ...
 					const { values, errors, touched } = formikProps;
-					console.log({ values, errors, touched });
+					// console.log({ values, errors, touched });
 
 					return (
 						<Form>
