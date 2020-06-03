@@ -7,17 +7,33 @@ import * as Yup from 'yup';
 import InputField from 'src/custom-fields/InputField';
 import PhotoField from 'src/custom-fields/PhotoField';
 
+const FILE_SIZE = 1 * 1024 * 1024; // 1MB
+const SUPPORTED_FORMATS = [
+  "image/jpg",
+  "image/jpeg",
+  "image/gif",
+  "image/png"
+];
+
 function PhotoModal(props) {
 	const initialValues = {
 		name: props.photoModal.item?.name ?? '',
 		descriptions: props.photoModal.item?.descriptions || '',
-		photo: props.photoModal.item?.image || ''
+    photo: props.photoModal.item?.image || '',
 	};
 
 	const validationSchema = Yup.object().shape({
 		name: Yup.string().required('This name field is required.'),
     descriptions: Yup.string().required('This descriptions field is required.'),
-    photo: Yup.string().required('This photo field is required.'),
+    photo: Yup.mixed().required("A file image is required").test(
+      "fileSize",
+      "File too large",
+      value => value && value.size <= FILE_SIZE
+    ).test(
+      "fileFormat",
+      "Unsupported Format File",
+      value => value && SUPPORTED_FORMATS.includes(value.type)
+    ),
 	});
 
   const handleClose = () => props.onCloseModal();
@@ -39,7 +55,7 @@ function PhotoModal(props) {
 			>
 				{(formikProps) => {
 					// do something here ...
-					const { values, errors, touched } = formikProps;
+					// const { values, errors, touched } = formikProps;
 					// console.log({ values, errors, touched });
 
 					return (
