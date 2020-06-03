@@ -28,16 +28,39 @@ function PhotoModal(props) {
     photo: Yup.mixed().required("A file image is required").test(
       "fileSize",
       "File too large",
-      value => value && value.size <= FILE_SIZE
+      value => { 
+        if(typeof value === 'object'){
+          return value && value.size <= FILE_SIZE;
+        } else {
+          return true;
+        }
+       }
     ).test(
       "fileFormat",
       "Unsupported Format File",
-      value => value && SUPPORTED_FORMATS.includes(value.type)
+      value => { 
+        if(typeof value === 'object'){
+          return value && SUPPORTED_FORMATS.includes(value.type);
+        } else {
+          return true;
+        }
+      }
     ),
 	});
 
   const handleClose = () => props.onCloseModal();
-  const handleSubmit = () => {
+  const handleSubmit = (values) => {
+    let itemNew = {
+      id: props.photoModal.item?.id ?? null,
+      name: values.name,
+      descriptions: values.descriptions,
+      photo: values.photo,
+    };
+
+    if(typeof values.photo === 'object'){
+      itemNew.photo = values.photo.previewUrl;
+    }
+    props.onUpdatePhoto(itemNew);
     props.onCloseModal();
   }
 
@@ -61,7 +84,7 @@ function PhotoModal(props) {
 					return (
 						<Form>
 							<Modal.Header closeButton>
-								<Modal.Title>{props.photoModal.item ? props.photoModal.item.name : null}</Modal.Title>
+								<Modal.Title>Photo Update</Modal.Title>
 							</Modal.Header>
 							<Modal.Body>
 								<Container>

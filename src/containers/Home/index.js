@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import List from './components/ListPhoto';
+import ListPhoto from './components/ListPhoto';
 import SideRight from './components/SideRight';
 import backend from 'src/api/backend';
 import { delay } from 'redux-saga/effects';
@@ -55,7 +55,7 @@ function Home(props) {
 
 		fetchApi();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+	}, []);
 
 	let onRefresh = async () => {
 		try {
@@ -66,6 +66,21 @@ function Home(props) {
 			showAlertAnimation(props, 'Đã có biến lớn, nghỉ chơi 🤣🤣🤣🤣🤣');
 			setPhotos(randomPhotos(props.photos));
 		}
+	};
+
+	let onUpdatePhoto = (photoNew) => {
+		if (!photoNew || !photoNew.id) {
+			return false;
+		}
+
+		let dataNew = photos.map((value) => {
+			if (photoNew.id === value.id) {
+				return { ...value, name: photoNew.name, descriptions: photoNew.descriptions, image: photoNew.photo };
+			} else {
+				return value;
+			}
+		});
+		setPhotos(dataNew);
 	};
 
 	return (
@@ -79,13 +94,13 @@ function Home(props) {
 			</Row>
 			<Row>
 				<Col xs={12} md={8}>
-					<List photos={photos} />
+					<ListPhoto photos={photos} />
 				</Col>
 				<Col className="pl-4 pr-4" md={4}>
 					<SideRight />
 				</Col>
 			</Row>
-      <PhotoModal></PhotoModal>
+			<PhotoModal onUpdatePhoto={onUpdatePhoto} />
 		</Container>
 	);
 }
