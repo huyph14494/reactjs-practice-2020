@@ -10,26 +10,28 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import config from '../config/default';
 import NotFound from './NotFound';
 import TopButton from 'src/components/TopButton';
+import Overlay from 'src/components/Overlay ';
 
 function App(props) {
-  console.log("App");
-  
+	console.log('App');
+
 	return (
 		<div className="App">
 			<Router basename={'/' + config.prefix_web}>
-        <Alert />
-        <ListAlertAnimation />
+				<Alert />
+				<ListAlertAnimation />
 				<Navbar />
 				<Header />
 				<MenuSidebar />
-        <TopButton />
+        <Overlay />
+				<TopButton />
 
 				<Switch location={props.location}>
-          {routes.map((route, i) => <Route exact key={i} {...route} />)}
-          <Redirect exact from="/" to="Sign-in V1" />
-          
-          <Route component={NotFound} />
-        </Switch>
+					{routes.map((route, i) => <Route exact key={i} {...route} />)}
+					<Redirect exact from="/" to="Sign-in V1" />
+
+					<Route component={NotFound} />
+				</Switch>
 			</Router>
 		</div>
 	);

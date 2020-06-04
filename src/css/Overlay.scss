@@ -1,0 +1,68 @@
+$heighDiv: 100px;
+$widthDiv: 100px;
+
+@mixin divFormat($index, $delay, $position : absolute) {
+	width: $heighDiv;
+	height: $widthDiv;
+	animation: mymove 1.5s;
+  opacity: 0;
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+
+	@if $index != 1 {
+		animation-delay: $delay;
+		position: $position;
+	}
+}
+
+.container-div {
+	display: flex;
+  flex-direction: row;
+  flex: 1;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+  @for $i from 1 through 3 {
+    .div#{$i} {
+      $delayTmp: 1.5s;
+      @if $i == 3 {
+        $delayTmp: 3s;
+      }
+
+      @include divFormat($i, $delayTmp);
+    }
+  }
+
+	@keyframes mymove {
+		0% {
+			opacity: 0;
+		}
+		35% {
+			opacity: 1;
+		}
+
+		65% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+.my-overlay {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: visible;
+  transition: 0.5s;
+}
