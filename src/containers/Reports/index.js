@@ -1,12 +1,12 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 import CanvasJSReact from '../../assets/canvasjs.react';
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const Reports = () => {
 	const options = {
-    height: 300,
+		height: 300,
 		animationEnabled: true,
 		exportEnabled: false,
 		theme: 'dark2', // "light1", "dark1", "dark2"
@@ -28,7 +28,7 @@ const Reports = () => {
 	};
 
 	const options2 = {
-    height: 300,
+		height: 300,
 		animationEnabled: true,
 		title: {
 			text: 'Number of New Customers'
@@ -83,21 +83,26 @@ const Reports = () => {
 	};
 
 	return (
-		<Row className='ml-5 mr-5 mt-5'>
-			<Col className='mr-5'>
-				{' '}
-				<CanvasJSChart
-					options={options}
-					/* onRef={ref => this.chart = ref} */
-				/>
-			</Col>
-			<Col className='ml-5'>
-				<CanvasJSChart
-					options={options2}
-					/* onRef={ref => this.chart = ref} */
-				/>
-			</Col>
-		</Row>
+		<Container fluid>
+			<Row className="mt-5 ml-1 mr-1">
+				<Col md={6} xs={12}>
+					<div className="ml-1 mr-1 mb-5">
+						<CanvasJSChart
+							options={options}
+							/* onRef={ref => this.chart = ref} */
+						/>
+					</div>
+				</Col>
+				<Col md={6} xs={12}>
+					<div className="ml-1 mr-1 mb-5">
+						<CanvasJSChart
+							options={options2}
+							/* onRef={ref => this.chart = ref} */
+						/>
+					</div>
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 
