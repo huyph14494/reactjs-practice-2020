@@ -4,7 +4,7 @@ $widthDiv: 100px;
 @mixin divFormat($index, $delay, $position : absolute) {
 	width: $heighDiv;
 	height: $widthDiv;
-	animation: mymove 1.5s;
+	animation: mymove 1s;
   opacity: 0;
   font-size: 100px;
   font-weight: bold;
@@ -14,6 +14,9 @@ $widthDiv: 100px;
 	@if $index != 1 {
 		animation-delay: $delay;
 		position: $position;
+  }
+  @if $index == 4 {
+    margin-left: -60px;
 	}
 }
 
@@ -25,11 +28,14 @@ $widthDiv: 100px;
 	align-items: center;
 	position: relative;
 
-  @for $i from 1 through 3 {
+  @for $i from 1 through 4 {
     .div#{$i} {
-      $delayTmp: 1.5s;
+      $delayTmp: 1s;
       @if $i == 3 {
-        $delayTmp: 3s;
+        $delayTmp: $delayTmp * 2;
+      }
+      @if $i == 4 {
+        $delayTmp: $delayTmp * 3;
       }
 
       @include divFormat($i, $delayTmp);
@@ -64,5 +70,25 @@ $widthDiv: 100px;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
   overflow-x: visible;
-  transition: 0.5s;
+  animation-name: overlay-show, overlay-hidden;
+  animation-duration: 0.8s, 0.8s;
+  animation-delay: 4s;
+}
+
+@keyframes overlay-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes overlay-hidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
