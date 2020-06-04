@@ -9,7 +9,7 @@ export default function Overlay() {
     setStatus(true);
     setTimeout(function() {
       setStatus(false);
-    }, 4500);
+    }, 5400);
 	};
 
 	return (

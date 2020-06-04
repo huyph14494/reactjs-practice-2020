@@ -10,9 +10,9 @@ $widthDiv: 100px;
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 4px #000000;
+  animation-delay: $delay;
 
 	@if $index != 1 {
-		animation-delay: $delay;
 		position: $position;
   }
   @if $index == 4 {
@@ -31,11 +31,12 @@ $widthDiv: 100px;
   @for $i from 1 through 4 {
     .div#{$i} {
       $delayTmp: 1s;
-      @if $i == 3 {
-        $delayTmp: $delayTmp * 2;
+
+      @if $i == 1 {
+        $delayTmp: 1.1s;
       }
-      @if $i == 4 {
-        $delayTmp: $delayTmp * 3;
+      @if $i != 1 {
+        $delayTmp: $delayTmp * $i;
       }
 
       @include divFormat($i, $delayTmp);
@@ -67,28 +68,34 @@ $widthDiv: 100px;
   z-index: 1;
   top: 0;
   left: 0;
+  opacity: 1;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
   overflow-x: visible;
   animation-name: overlay-show, overlay-hidden;
-  animation-duration: 0.8s, 0.8s;
-  animation-delay: 4s;
+  animation-duration: 1s, 1s;
+  animation-timing-function: linear, linear;
+  animation-delay: 0s, 4.5s;
 }
 
 @keyframes overlay-show {
   0% {
     opacity: 0;
+    width: 0%;
   }
   100% {
     opacity: 1;
+    width: 100%;
   }
 }
 
 @keyframes overlay-hidden {
   0% {
     opacity: 1;
+    width: 100%;
   }
   100% {
     opacity: 0;
+    width: 0%;
   }
 }
