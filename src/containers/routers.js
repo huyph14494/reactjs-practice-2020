@@ -4,6 +4,7 @@ import MagicColor from './MagicColor/MagicColor';
 import AlertAnimation from 'src/containers/Alert/AlertAnimation';
 import SigininV2 from './SigininV2';
 import Reports from './Reports';
+import MeteorShowerPage from './MeteorShowerPage';
 
 const routes = [
 	{
@@ -35,6 +36,11 @@ const routes = [
 		path: '/reports',
 		component: Reports,
 		name: 'Reports'
+  },
+  {
+		path: '/meteor-shower',
+		component: MeteorShowerPage,
+		name: 'Meteor Shower'
 	}
 ];
 
