@@ -5,6 +5,7 @@ import AlertAnimation from 'src/containers/Alert/AlertAnimation';
 import SigininV2 from './SigininV2';
 import Reports from './Reports';
 import MeteorShowerPage from './MeteorShowerPage';
+import Galaxy from './Galaxy';
 
 const routes = [
 	{
@@ -41,6 +42,11 @@ const routes = [
 		path: '/meteor-shower',
 		component: MeteorShowerPage,
 		name: 'Meteor Shower'
+  },
+  {
+		path: '/galaxy',
+		component: Galaxy,
+		name: 'Galaxy'
 	}
 ];
 
